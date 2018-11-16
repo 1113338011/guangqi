@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>联系我们</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+      <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?7a68950496ade659972d51aaea195857";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+    </script>
+</head>
+
+<body class="full-page blue-bg">
+    <div id="mw-contact" style="height: 100%;">
+        <div id="hd">
+            <div class="wp clearfix">
+                <a href="index.html" class="hd-logo fl">
+                    <img src="images/logo.png">
+                </a>
+                <a href="javascript:;" class="nav-btn fr"></a>
+                <div class="hd-nav fr">
+                    <a href="javascript:;" class="nav-close"></a>
+                    <ul class="clearfix">
+                        <li><a href="company.html">企业介绍</a></li>
+                        <li><a href="news.html">资讯动态</a></li>
+                        <li><a href="jobs.html">招聘信息</a></li>
+                        <li class="on"><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="contact-page full-page">
+            <div class="contact-box">
+                <div class="left-bar clearfix">
+                 
+                    <div class="erweima">
+                        <h4>微信公众号</h4>
+                        <img src="images/erweima2.png">
+                    </div>
+                
+                </div>
+                <div class="right-con">
+                    <div class="con-inner">
+                        <h1>Contact us</h1>
+                        <div class="address"><img src="images/icon5.png">广州市南沙区香江国际科创中心</div>
+                        <div class="info clearfix">
+                            <div class="info-item">
+                                <img src="images/icon7.png">
+                                <h5>E-mail: </h5>
+                                <p>service@gac-nio.com</p>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <div class="input form-group">
+                                <p>您的手机号*</p>
+                                <input type="text" v-model="phone" id="phoneInput">
+                            </div>
+                            <div class="input form-group">
+                                <p>您的邮箱</p>
+                                <input type="text" v-model="email" id="emailInput">
+                            </div>
+                        </div>
+                        <div class="form-group textarea">
+                            <p>留言*</p>
+                            <textarea v-model="message" id="messageInput"></textarea>
+                        </div>
+                        <button class="submit disabled" type="button" @click="submitMessage">提交</button>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c-copyright">Copyright © 2018 , Guangqiweilai All Rights Reserved 粤ICP备18123237号</div>
+        <div class="filter-bg mymap">
+            <div class="map-wp">
+                <div id="container" style="width:100%;height:100%">
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="mw-popu" :class="{ 'show': msg }" id="puposucc">
+            <div class="popu-info">
+                <div class="popu-info-td" v-html="msg"></div>
+            </div>
+        </div>
+        <div class="mw-mask" :class="{ 'show': msg }"></div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.10&key=您申请的key值"></script>
+<script type="text/javascript">
+    var contant = new Vue({
+        el: "#mw-contact",
+        data: {
+            phone: '',
+            email: '',
+            message: '',
+            msg: ''
+        },
+        watch: {
+            msg: function (val) {
+                if (val != '') {
+                    var the = this;
+                    setTimeout(function(){
+                        the.msg = '';
+                    }, 3000);
+                }
+            }
+        },
+        methods: {
+            submitMessage: function() {
+                if (this.phone == '') {
+                    this.msg = '请输入您的手机号码';
+                    $('#phoneInput').focus();
+                }
+                else if (!/^(((13[0-9])|(15[0-9])|(18[0-9]))\d{8})$/.test(this.phone)) {
+                    this.msg = '手机号码有误，请核对后重新输入';
+                    $('#phoneInput').focus();
+                }
+                else if (this.email != '' && !/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/.test(this.email)) {
+                    this.msg = '请再次核对您的邮箱地址';
+                    $('#emailInput').focus();
+                }
+                else if (this.message == '') {
+                    this.msg = '请输入您的留言内容';
+                    $('#messageInput').focus();
+                }
+                else {
+                    var the = this
+                    $.ajax({
+                        url: 'http://139.159.238.100/leave/commitleave.json?phone=' + the.phone + '&email=' + the.email + '&leave=' + the.message,
+                        success: function(response) {
+                            if (response.result_code == 1) {
+                                the.msg = '提交成功<br />我们将尽快答复 ';
+                                the.phone = '';
+                                the.email = '';
+                                the.message = '';
+                            } else {
+                                the.msg = response.result_msg;
+                            }
+                        }
+                    });
+                }
+            },
+            reloadPage: function() {
+                location.reload();
+            }
+        }
+
+    })
+    var marker, map = new AMap.Map("container", {
+        resizeEnable: true,
+        center: [113.546291, 22.793794],
+        zoom: 17
+    });
+
+    // 实例化点标记
+    function addMarker() {
+        marker = new AMap.Marker({
+            icon: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png",
+            position: [113.546291, 22.793794],
+            offset: new AMap.Pixel(-13, -30)
+        });
+        // 点标记中的文本
+        marker.setMap(map);
+
+    }
+
+
+
+    $('.address').on('click', function(event) {
+        event.stopPropagation();
+        $('.mymap').show();
+        addMarker();
+
+    });
+
+    $('.filter-bg').on('click', function() {
+        $(this).hide();
+        //window.open("https://www.amap.com/search?query=%E9%A6%99%E6%B1%9F%E5%9B%BD%E9%99%85%E9%87%91%E8%9E%8D%E4%B8%AD%E5%BF%83&city=110000&geoobj=116.213024%7C39.809452%7C116.70741%7C40.005653&zoom=12");
+    });
+
+</script>

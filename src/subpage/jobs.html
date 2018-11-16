@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>招聘信息</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?7a68950496ade659972d51aaea195857";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+    </script>
+</head>
+
+<body>
+    <div id="jobs" style="height: 100%;">
+        <div>
+            <div class="mw-container">
+                <div id="hd">
+                    <div class="clearfix">
+                        <a href="index.html" class="hd-logo fl">
+                            <img src="images/logo.png">
+                        </a>
+                        <a href="javascript:;" class="nav-btn fr"></a>
+                        <div class="hd-nav fr">
+                            <a href="javascript:;" class="nav-close"></a>
+                            <ul class="clearfix">
+                                <li><a href="company.html">企业介绍</a></li>
+                                <li><a href="news.html">资讯动态</a></li>
+                                <li class="on"><a href="jobs.html">招聘信息</a></li>
+                                <li><a href="contact.html">联系我们</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mw-bannerbg">
+            <div class="mw-container">
+                <div class="banner-text">
+                    <div class="cn">彼此成就 共同成长</div>
+                    <i class="line"></i>
+                    <div class="en">你前进的每一公里，便是我前进的每一公里<br />
+                        你和我，互相成就，共同成长
+                    </div>
+                </div>
+            </div>
+            <div class="mw-bannerimg" style="background-image:url(images/jionbanner.jpg); "></div>
+        </div>
+        <div id="main" class="mw-container" style="height:auto;">
+            <div class="recruit">
+                <div class="recruit-form">
+                    <div class="inner-wp">
+                        <h2>全部职位</h2>
+                        <form class="clearfix">
+                            <div class="form-group select">
+                                <div @click="goSearch">
+                                    <i></i>
+                                    <input type="text" v-model="jobTypeSelected.jobtypename" disabled="true">
+                                </div>
+                                <ul>
+                                    <li v-for="item in jobType" @click="searchJobsType(item)">{{ item.jobtypename }}</li>
+                                </ul>
+                            </div>
+                            <div class="form-group select" @click="goSearch">
+                                <div @click="goSearch">
+                                    <i></i>
+                                    <input type="text" v-model="jobAreaSelected" disabled="true">
+                                </div>
+                                <ul>
+                                    <li v-for="item in jobArea" @click="searchJobsArea(item.jarea)">{{ item.jarea }}</li>
+                                </ul>
+                            </div>
+                            <div class="form-group search">
+                                <input type="text" placeholder="请输入您要搜索的职位" v-model="jobSearchKey" @focus="goSearch" @keyup.enter="searchJobs">
+                                <button type="button" @click="searchJobs"></button>
+                            </div>
+                        </form>
+                        <a href="javascript:;" class="recruit-link" id="ewmhide"><img src="images/img1.png" id="ewmhideImg"></a>
+                        <a href="javascript:;" class="recruit-link" id="ewmshow"><img src="images/erweima3.jpg"></a>
+                    </div>
+                </div>
+                <div class="recruit-list inner-wp">
+                    <div class="list-title clearfix">
+                        <div class="width1">类别</div>
+                        <div class="width2">地区</div>
+                        <div class="width3">职位</div>
+                        <div class="width4">查看详情</div>
+                    </div>
+                    <ul class="recruitment" v-if="jobList.length > 0">
+                        <li v-for="(item, index) in jobList" :key="index">
+                            <div class="category clearfix">
+                                <div class="width1">{{ item.jobtypename }}</div>
+                                <div class="width2">{{ item.jarea }}</div>
+                                <div class="width3">{{ item.jobname }}</div>
+                                <div class="width4">
+                                    <a href="javascript:;" class="detial-btn"></a>
+                                </div>
+                            </div>
+                            <div class="specific">
+                                <div class="specific-item">
+                                    <span>职位描述</span>
+                                    <div class="text" v-html="item.jcontent"></div>
+                                </div>
+                                <div class="specific-item">
+                                    <span>职位要求</span>
+                                    <div class="text" v-html="item.jrequire"></div>
+                                </div>
+
+                                <div class="specific-item">
+                                    <span>马上应聘</span>
+                                    <div class="linkurl">
+                                        <a :href="link.j_link" v-for="(link, jobfromid) in item.links" :key="jobfromid" :title="link.title" target="_blank">
+                                            <img :src="'http://139.159.238.100/uploads/' + link.logo" />
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </ul>
+                    <div class="load-more">
+                        <a href="javascript:;" v-if="isNext" class="load-more" @click="loadMore">
+                            <img v-if="loadState" src="images/loading.gif" width="18" />
+                            <span v-else>加载更多职位~</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide swiper-slide-footer">
+            <div style="width: 100%; height: 100%; background-color: #333; color: #fff;">
+                <div id="ft">
+                    <div class="wp">
+                        <div class=" clearfix">
+                            <a href="index.html" class="ft-logo fl">
+                                <img src="images/logo.png">
+                            </a>
+                            <ul class="ft-item ft-nav">
+                                <li>
+                                    <a href="company.html">企业介绍</a>
+                                </li>
+                                <li>
+                                    <a href="news.html">资讯动态</a>
+                                </li>
+                                <li>
+                                    <a href="jobs.html">招聘信息</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">联系我们 </a>
+                                </li>
+                            </ul>
+                            <div class="ft-item ft-contact">
+                                <p>Email：service@gac-nio.com</p>
+                            </div>
+                            <div class="ft-item ft-link clearfix">
+                                <div class="wechat share-btn">
+                                    <a href="#"><img src="images/icon1.png"></a>
+                                    <div class="erweima">
+                                        <img src="images/erweima.jpg">
+                                    </div>
+                                </div>
+                                <a href="https://weibo.com/u/6563374966" target="_blank" class="share-btn">
+                                    <img src="images/icon3.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="copyright">Copyright © 2018 , Guangqiweilai All Rights Reserved 粤ICP备18123237号</div>
+                    </div>
+                </div>
+                <div class="filter-bg erweima-box">
+                    <div class="erweima-popup">
+                        <img src="images/erweima2.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript">
+        var userAgent = navigator.userAgent;
+        var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+        if (!isIE) {
+            var jobs = new Vue({
+                el: '#jobs',
+                data: {
+                    jobList: [],
+                    nextPage: 1,
+                    pageSize: 10,
+                    loadState: false,
+                    isNext: true,
+                    jobType: [{
+                        jobtypeid: 0,
+                        jobtypename: '所有类别'
+                    }],
+                    jobArea: [{
+                        jarea: '所有地区'
+                    }],
+                    jobTypeSelected: {
+                        jobtypeid: 0,
+                        jobtypename: '所有类别'
+                    },
+                    jobAreaSelected: '所有地区',
+                    jobSearchKey: '',
+                    searchStr: '',
+                },
+                watch: {
+                    jobList: function(val) {
+                        if (val.length > 0) {
+                            this.$nextTick(function() {
+                                $('.recruitment .detial-btn').off('click');
+                                $('.recruitment .detial-btn').on('click', function() {
+                                    $(this).parents('li').toggleClass('on');
+                                    $(this).parents('li').siblings().removeClass('on');
+                                    $(this).parents('li').find('.specific').slideToggle();
+                                    $(this).parents('li').siblings().find('.specific').slideUp();
+                                });
+                            });
+                        }
+                    }
+                },
+                created: function() {
+                    var the = this;
+                    $.ajax({
+                        url: 'http://139.159.238.100/position/position.json?ptype=3',
+                        success: function(response) {
+                            the.jobType = the.jobType.concat(response.jobtype);
+                            the.jobArea = the.jobArea.concat(response.areas);
+                        }
+                    });
+                    this.loadList();
+                },
+                methods: {
+                    loadMore: function() {
+                        if (this.isNext) {
+                            this.loadList();
+                        }
+                    },
+                    loadList: function() {
+                        var the = this;
+                        the.loadState = true;
+                        $.ajax({
+                            url: encodeURI('http://139.159.238.100/position/pageposition.json?pageNum=' + this.nextPage + '&pageSize=' + this.pageSize + this.searchStr),
+                            type: 'GET',
+                            success: function(response) {
+                                the.nextPage += 1;
+                                the.isNext = response.isNext;
+                                the.jobList = the.jobList.concat(response.jobs);
+                                the.loadState = false;
+                            }
+                        });
+                    },
+                    searchJobs: function() {
+                        this.jobList = [];
+                        this.nextPage = 1;
+                        this.isNext = true;
+                        var jobTypeId = this.jobTypeSelected.jobtypeid ? this.jobTypeSelected.jobtypeid : '';
+                        var jobArea = this.jobAreaSelected == '所有地区' ? '' : this.jobAreaSelected;
+                        var jobName = this.jobSearchKey == '' ? '' : this.jobSearchKey;
+                        this.searchStr = '&jobtypeid=' + jobTypeId + '&jarea=' + jobArea + '&jobname=' + jobName
+                        this.loadList();
+                    },
+                    searchJobsType: function(item) {
+                        this.jobTypeSelected = item;
+                        this.searchJobs()
+                    },
+                    searchJobsArea: function(item) {
+                        this.jobAreaSelected = item;
+                        this.searchJobs()
+                    },
+                    goSearch: function() {
+                        $('html, body').animate({
+                            scrollTop: $('.recruit-form').offset().top
+                        }, 800);
+                    }
+                }
+            })
+
+            $(function() {
+
+                $('.select').on('click', function(event) {
+                    event.stopPropagation();
+                    $(this).toggleClass('on').siblings('.select').removeClass('on');
+                    $(this).siblings('.select').removeClass('on');
+                    $(this).find('ul').slideToggle(300).siblings('.select').find('ul').slideUp(300);
+                    $(this).siblings('.select').find('ul').slideUp(300);
+                });
+                $('.select').find('li').on('click', function() {
+                    $(this).parents('.select').find('input').val($(this).html());
+                });
+
+                $('body').on('click', function() {
+                    $('.select').removeClass('on');
+                    $('.select').find('ul').slideUp();
+                });
+
+                //            $('.recruit-link').on('click', function(event) {
+                //                event.stopPropagation();
+                //                $('.erweima-box').show();
+                //            });
+
+                $('.filter-bg').on('click', function() {
+                    $(this).hide();
+                });
+
+                $("#ewmhide").click(function(event) {
+                    $("#ewmhide").hide();
+                    $("#ewmshow").show();
+                });
+
+                $(window).click(function(event) {
+                    var imgEl = $('#ewmhideImg');
+                    if ((!imgEl.is(event.target) && imgEl.has(event.target).length === 0) && $("#ewmshow").is(':visible')) {
+                        $("#ewmshow").hide();
+                        $("#ewmhide").show();
+                    }
+                });
+
+
+
+
+
+
+            });
+        }
+
+        //        $(document).ready(function() {
+        //
+        //            var timerStart, timerEnd;
+        //            $("#pageflip").hover(function() {
+        //                $(this).stop().animate({
+        //                    width: '146px',
+        //                    height: '152px'
+        //                }, 400);
+        //                if (timerEnd) {
+        //                    timerEnd.clearTimeout()
+        //                }
+        //                timerStart = setTimeout(function(){
+        //                    $('#imgflip').attr('src', 'images/ico_sj.png');
+        //                }, 300);
+        //            }, function() {
+        //                $(this).stop().animate({
+        //                    width: '50px',
+        //                    height: '52px'
+        //                }, 220);
+        //                if (timerStart) {
+        //                    timerStart.clearTimeout()
+        //                }
+        //                timerEnd = setTimeout(function(){
+        //                    $('#imgflip').attr('src', 'images/ico_sj_small.png');
+        //                }, 300);
+        //            });
+        //
+        //        });
+
+    </script>
+
+
+</body>
+
+</html>

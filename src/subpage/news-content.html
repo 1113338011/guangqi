@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>新闻内容页</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+      <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?7a68950496ade659972d51aaea195857";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+
+    </script>
+</head>
+
+<body>
+    <div id="NewsContent" style="height: 100%;">
+        <div>
+            <div class="mw-container">
+                <div id="hd">
+                    <div class="clearfix news-bloack">
+                        <a href="index.html" class="hd-logo fl">
+                            <img src="images/logoblack.png">
+                        </a>
+                        <a href="javascript:;" class="nav-btn fr"></a>
+                        <div class="hd-nav fr">
+                            <a href="javascript:;" class="nav-close"></a>
+                            <ul class="clearfix menu-black">
+                                <li><a href="company.html">企业介绍</a></li>
+                                <li class="on"><a href="news.html">资讯动态</a></li>
+                                <li><a href="jobs.html">招聘信息</a></li>
+                                <li><a href="contact.html">联系我们</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main" class="mw-container" style="height:auto;">
+            <div class="newsmainbox">
+                <div class="title" v-html="filterTitle(newsTitle)"></div>
+                <div class="data">
+                    <span>{{ newsDate }} </span><span>来源:{{ newsFrom }} </span> <span> 作者:{{ newsAuthor }}</span>
+                </div>
+                <div class="content" v-html="newsContent"></div>
+            </div>
+        </div>
+        <div class="swiper-slide swiper-slide-footer">
+            <div style="width: 100%; height: 100%; background-color: #333; color: #fff;">
+                <div id="ft">
+                    <div class="wp">
+                        <div class=" clearfix">
+                            <a href="index.html" class="ft-logo fl">
+                                <img src="images/logo.png">
+                            </a>
+                            <ul class="ft-item ft-nav">
+                                <li>
+                                    <a href="company.html">企业介绍</a>
+                                </li>
+                                <li>
+                                    <a href="news.html">资讯动态</a>
+                                </li>
+                                <li>
+                                    <a href="jobs.html">招聘信息</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">联系我们 </a>
+                                </li>
+                            </ul>
+                            <div class="ft-item ft-contact">
+                                <p>Email：service@gac-nio.com</p>
+                            </div>
+                            <div class="ft-item ft-link clearfix">
+                                <div class="wechat share-btn">
+                                    <a href="#"><img src="images/icon1.png"></a>
+                                    <div class="erweima">
+                                        <img src="images/erweima.jpg">
+                                    </div>
+                                </div>
+                                <a href="https://weibo.com/u/6563374966" target="_blank" class="share-btn">
+                                    <img src="images/icon3.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="copyright">Copyright © 2018 , Guangqiweilai All Rights Reserved 粤ICP备18123237号</div>
+                    </div>
+                </div>
+                <div class="filter-bg erweima-box">
+                    <div class="erweima-popup">
+                        <img src="images/erweima2.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript">
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        var vm = new Vue({
+            el: '#NewsContent',
+            data: {
+                newsId: 0,
+                newsType: 0,
+                newsTitle: '',
+                newsDate: '',
+                newsFrom: '',
+                newsAuthor: '',
+                newsContent: ''
+            },
+            created: function () {
+                var newsId = getQueryString('id');
+                var newsType = getQueryString('type');
+                if (!newsId || !newsType) {
+                    this.newsContent = '文章不存在';
+                } else {
+                    this.newsId = newsId
+                    this.newsType = newsType
+                    var the = this;
+                    $.ajax({
+                        url: 'http://139.159.238.100/infor/news.json?newstype=' + this.newsType,
+                        success: function(response) {
+                            if (response.result_code == 1) {
+                                if (response.news.length > 0) {
+                                    response.news.forEach(function(item, index) {
+                                        if (item.newsid == the.newsId) {
+                                            the.newsTitle = item.newstitle
+                                            the.newsDate = item.newscreattime
+                                            the.newsContent = item.newsbody
+                                            the.newsFrom = item.newsfrom
+                                            the.newsAuthor = item.newswhere
+                                        }
+                                    });
+                                }
+                            }
+                            if (the.newsContent == '' && the.newsTitle == '' && the.newsDate == '' && the.newsFrom == '' && the.newsAuthor == '') {
+                                the.newsContent = '文章不存在';
+                            }
+                        }
+                    });
+                }
+            },
+            methods: {
+                filterTitle: function (str) {
+                    return str.replace(/\*/g, '<br>');
+                }
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

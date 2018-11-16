@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="&#x56FE;&#x5C42;_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 232 312" style="enable-background:new 0 0 232 312;" xml:space="preserve">
+<g id="Mask_3_">
+	<linearGradient id="path-7_1_" gradientUnits="userSpaceOnUse" x1="143.1659" y1="228.9193" x2="11.373" y2="109.2775">
+		<stop  offset="0" style="stop-color:#113D86"/>
+		<stop  offset="1" style="stop-color:#34A4DD"/>
+	</linearGradient>
+	<path id="path-7_31_" style="fill:url(#path-7_1_);" d="M141.043,249.068c-3.748-63.655-23.373-105.048-58.876-124.177
+		s-62.686-23.108-81.548-11.934c1.883,30.265,6.133,44.904,29.224,43.488c34.636-2.124,25.453,16.026,11.784,25.453
+		c-17.815,12.286,49.344,4.395,50.435,26.867C96.178,220.39,130.713,217.25,141.043,249.068z"/>
+</g>
+<defs>
+	<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="49.016" y="99.243" width="131.84" height="160.592">
+		<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+	</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="49.016" y="99.243" width="131.84" height="160.592" id="mask-8_10_">
+	<g style="filter:url(#Adobe_OpacityMaskFilter);">
+		<path id="path-7_10_" style="fill:#FFFFFF;" d="M141.043,249.068c-3.748-63.655-23.373-105.048-58.876-124.177
+			s-62.686-23.108-81.548-11.934c1.883,30.265,14.37,44.69,37.46,43.274c34.636-2.124,31.201,2.285,21.625,21.692
+			c-9.576,19.407,38.588,8.07,44.762,25.506C108.582,215.052,120.774,230.266,141.043,249.068z"/>
+	</g>
+</mask>
+<path style="mask:url(#mask-8_10_);fill:#113D86;" d="M146.322,154.51c-54.715-50.532-87.15-66.412-97.305-47.639
+	c36.375,31.36,60.627,77.613,72.757,138.76c33.074,14.842,52.249,18.053,57.525,9.633c5.277-8.42-2.852-24.946-24.386-49.577
+	L146.322,154.51z"/>
+<g>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="4.054" y="111.612" width="132.152" height="128.847">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="4.054" y="111.612" width="132.152" height="128.847" id="mask-8_9_">
+		<g style="filter:url(#Adobe_OpacityMaskFilter_1_);">
+			<path id="path-7_9_" style="fill:#FFFFFF;" d="M141.043,249.068c-3.748-63.655-23.373-105.048-58.876-124.177
+				s-62.686-23.108-81.548-11.934c1.883,30.265,14.37,44.69,37.46,43.274c34.636-2.124,31.201,2.285,21.625,21.692
+				c-9.576,19.407,38.588,8.07,44.762,25.506C108.582,215.052,120.774,230.266,141.043,249.068z"/>
+		</g>
+	</mask>
+	<path id="Path-38_3_" style="mask:url(#mask-8_9_);fill:none;stroke:#013C46;stroke-width:0.7406;" d="M135.842,240.392
+		c-16.934-91.4-60.852-134.007-131.756-127.821"/>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter_2_" filterUnits="userSpaceOnUse" x="31.627" y="123.759" width="40.12" height="9.36">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="31.627" y="123.759" width="40.12" height="9.36" id="mask-8_8_">
+		<g style="filter:url(#Adobe_OpacityMaskFilter_2_);">
+			<path id="path-7_8_" style="fill:#FFFFFF;" d="M141.043,249.068c-3.748-63.655-23.373-105.048-58.876-124.177
+				s-62.686-23.108-81.548-11.934c1.883,30.265,14.37,44.69,37.46,43.274c34.636-2.124,31.201,2.285,21.625,21.692
+				c-9.576,19.407,38.588,8.07,44.762,25.506C108.582,215.052,120.774,230.266,141.043,249.068z"/>
+		</g>
+	</mask>
+	<path id="Path-45_3_" style="mask:url(#mask-8_8_);fill:none;stroke:#013C46;stroke-width:0.7406;" d="M71.698,124.77
+		c-14.87-1.999-28.161,0.679-39.874,8.035"/>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter_3_" filterUnits="userSpaceOnUse" x="68.082" y="153.258" width="34.873" height="7.651">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="68.082" y="153.258" width="34.873" height="7.651" id="mask-8_7_">
+		<g style="filter:url(#Adobe_OpacityMaskFilter_3_);">
+			<path id="path-7_7_" style="fill:#FFFFFF;" d="M141.043,249.068c-3.748-63.655-23.373-105.048-58.876-124.177
+				s-62.686-23.108-81.548-11.934c1.883,30.265,14.37,44.69,37.46,43.274c34.636-2.124,31.201,2.285,21.625,21.692
+				c-9.576,19.407,38.588,8.07,44.762,25.506C108.582,215.052,120.774,230.266,141.043,249.068z"/>
+		</g>
+	</mask>
+	<path id="Path-46_3_" style="mask:url(#mask-8_7_);fill:none;stroke:#013C46;stroke-width:0.7406;" d="M102.903,154.047
+		c-9.89-1.415-21.448,0.76-34.673,6.523"/>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter_4_" filterUnits="userSpaceOnUse" x="114.668" y="158.481" width="5.683" height="14.239">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="114.668" y="158.481" width="5.683" height="14.239" id="mask-8_6_">
+		<g style="filter:url(#Adobe_OpacityMaskFilter_4_);">
+			<path id="path-7_5_" style="fill:#FFFFFF;" d="M141.043,249.068c-3.748-63.655-23.373-105.048-58.876-124.177
+				s-62.686-23.108-81.548-11.934c1.883,30.265,14.37,44.69,37.46,43.274c34.636-2.124,31.201,2.285,21.625,21.692
+				c-9.576,19.407,38.588,8.07,44.762,25.506C108.582,215.052,120.774,230.266,141.043,249.068z"/>
+		</g>
+	</mask>
+	<path id="Path-47_3_" style="mask:url(#mask-8_6_);fill:none;stroke:#013C46;stroke-width:0.7406;" d="M115.042,172.717
+		c-0.092-8.134,1.641-12.761,5.197-13.882"/>
+</g>
+<polygon id="Rectangle-48_2_" style="fill:#2A99D6;" points="101.169,240.392 173.982,240.392 162.999,311.538 112.152,311.538 "/>
+<path id="Combined-Shape_3_" style="fill:#9DD6E3;" d="M168.624,275.097l5.357-34.705h-72.813l5.357,34.705H168.624z"/>
+</svg>
