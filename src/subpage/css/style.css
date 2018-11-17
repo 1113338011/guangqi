@@ -352,6 +352,7 @@ body {
 
 .recruit .recruit-list {
     padding: 40px 0 108px;
+    min-height:600px;
 }
 
 .recruit .recruit-list .width1 {
@@ -1070,12 +1071,15 @@ body {
 
     #ft .ft-nav {
         display: flex;
-        justify-content: space-around;
+        justify-content:space-between;
+        padding:15px 15px 0;
         font-size: 12px;
+        box-sizing: border-box;
     }
 
     #ft .ft-contact p {
         padding: 0 15px;
+        text-align: left;
     }
 
     #ft .ft-link {
@@ -1087,7 +1091,9 @@ body {
         margin: 0 20px 0 0;
         float: none;
     }
-
+    #ft .ft-link .share-btn:last-child{
+        margin-right: 0px;
+    }
     #ft .ft-link a {
         width: 30px;
     }

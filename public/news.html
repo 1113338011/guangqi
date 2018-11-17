@@ -54,7 +54,7 @@
                     <div class="newsbanner-text">
                         <div class="en">{{ topNews.date.replace(/-/g, '.') }}</div>
                         <div class="cn" v-html="filterTitle(topNews.title)"></div>
-                        <a :href="'news-content.html?type='+topNews.type+'&id='+topNews.id" class="news-top-more">
+                        <a :href="'news-content.html?type='+topNews.type+'&id='+topNews.id" class="news-top-more" target="_blank">
                             <span class="more-hard"></span>
                             <span class="more-text">了解更多 </span>
                         </a>
