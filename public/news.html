@@ -113,11 +113,13 @@
                             </div>
                             <div class="ft-item ft-link clearfix">
                                 <div class="wechat share-btn">
-                                    <a href="#"><img src="images/icon1.png"></a>
-                                    <div class="erweima">
+                                    <div id="showCode"><img src="images/icon1.png"></div>
+                                    <div class="erweima" id="EwmCode">
                                         <img src="images/erweima.jpg">
                                     </div>
                                 </div>
+
+
                                 <a href="https://weibo.com/u/6563374966" target="_blank" class="share-btn">
                                     <img src="images/icon3.png">
                                 </a>
@@ -169,13 +171,13 @@
                     this.defaultType = newsType
                 }
                 var the = this
-                axios.get('http://139.159.238.100/infor/infor.json?ptype=1&newstype=' + the.defaultType).then(function(response){
+                axios.get('http://139.159.238.100/infor/infor.json?ptype=1&newstype=' + the.defaultType).then(function(response) {
                     response = response.data
                     if (response.result_code == 1) {
                         the.newsType = response.newstype
                     }
                 });
-                axios.get('http://139.159.238.100/infor/news.json?ptype=2&newstype=' + the.defaultType).then(function(response){
+                axios.get('http://139.159.238.100/infor/news.json?ptype=2&newstype=' + the.defaultType).then(function(response) {
                     response = response.data
                     if (response.result_code == 1) {
                         if (response.news.length > 0) {
@@ -183,7 +185,7 @@
                         }
                     }
                 });
-                axios.get('http://139.159.238.100/infor/news.json?ptype=2&top=1&newstype=' + this.defaultType).then(function(response){
+                axios.get('http://139.159.238.100/infor/news.json?ptype=2&top=1&newstype=' + this.defaultType).then(function(response) {
                     response = response.data
                     if (response.result_code == 1) {
                         if (response.news.length > 0) {
@@ -209,6 +211,17 @@
                 }
             }
         })
+        $("#showCode").click(function(event) {
+            $("#EwmCode").show();
+        });
+
+
+        $('#News').on('click', function(event) {
+            var ewmEl = $('#showCode');
+            if ((!ewmEl.is(event.target) && ewmEl.has(event.target).length === 0) && $("#showCode").is(':visible')) {
+                $("#EwmCode").hide();
+            }
+        });
 
     </script>
 

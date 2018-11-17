@@ -9,19 +9,19 @@
     <title>联系我们</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-     
-     
-         <!--[if ( lt IE 9)|(!IE)]> -->
+
+
+    <!--[if ( lt IE 9)|(!IE)]> -->
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <!-- <![endif]-->    
+    <!-- <![endif]-->
     <!--[if IE 9]> 
      <link rel="stylesheet" type="text/css" href="cssie9/style.css" />
      <link rel="stylesheet" type="text/css" href="cssie9/reset.css" />
     <![endif]-->
-  
-     
-      <script type="text/javascript">
+
+
+    <script type="text/javascript">
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
@@ -55,12 +55,12 @@
         <div class="contact-page full-page">
             <div class="contact-box">
                 <div class="left-bar clearfix">
-                 
+
                     <div class="erweima">
                         <h4>微信公众号</h4>
                         <img src="images/erweima2.png">
                     </div>
-                
+
                 </div>
                 <div class="right-con">
                     <div class="con-inner">
@@ -102,7 +102,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="mw-popu" :class="{ 'show': msg }" id="puposucc">
             <div class="popu-info">
                 <div class="popu-info-td" v-html="msg"></div>
@@ -130,10 +130,10 @@
             msg: ''
         },
         watch: {
-            msg: function (val) {
+            msg: function(val) {
                 if (val != '') {
                     var the = this;
-                    setTimeout(function(){
+                    setTimeout(function() {
                         the.msg = '';
                     }, 3000);
                 }
@@ -144,26 +144,22 @@
                 if (this.phone == '') {
                     this.msg = '请输入您的手机号码';
                     $('#phoneInput').focus();
-                }
-                else if (!/^(((13[0-9])|(15[0-9])|(18[0-9]))\d{8})$/.test(this.phone)) {
+                } else if (!/^(((13[0-9])|(15[0-9])|(18[0-9]))\d{8})$/.test(this.phone)) {
                     this.msg = '手机号码有误，请核对后重新输入';
                     $('#phoneInput').focus();
-                }
-                else if (this.email != '' && !/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/.test(this.email)) {
+                } else if (this.email != '' && !/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/.test(this.email)) {
                     this.msg = '请再次核对您的邮箱地址';
                     $('#emailInput').focus();
-                }
-                else if (this.message == '') {
+                } else if (this.message == '') {
                     this.msg = '请输入您的留言内容';
                     $('#messageInput').focus();
-                }
-                else {
+                } else {
                     var the = this;
                     axios.post('http://139.159.238.100/leave/commitleave.json', {
                         phone: the.phone,
                         email: the.email,
                         leave: the.message
-                    }).then(function(response){
+                    }).then(function(response) {
                         response = response.data
                         if (response.result_code == 1) {
                             the.msg = '提交成功<br />我们将尽快答复 ';
@@ -213,5 +209,6 @@
         $(this).hide();
         //window.open("https://www.amap.com/search?query=%E9%A6%99%E6%B1%9F%E5%9B%BD%E9%99%85%E9%87%91%E8%9E%8D%E4%B8%AD%E5%BF%83&city=110000&geoobj=116.213024%7C39.809452%7C116.70741%7C40.005653&zoom=12");
     });
+    
 
 </script>

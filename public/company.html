@@ -13,12 +13,12 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/swiper.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <!-- <![endif]-->    
+    <!-- <![endif]-->
     <!--[if IE 9]> 
      <link rel="stylesheet" type="text/css" href="cssie9/style.css" />
      <link rel="stylesheet" type="text/css" href="cssie9/reset.css" />
     <![endif]-->
-  
+
 
 
 
@@ -36,6 +36,7 @@
 </head>
 
 <body>
+   <div id="company" style="height: 100%;">
     <div class="menuflex">
         <div class="mw-container">
             <div id="hd">
@@ -199,8 +200,8 @@
                             </div>
                             <div class="ft-item ft-link clearfix">
                                 <div class="wechat share-btn">
-                                    <a href="#"><img src="images/icon1.png"></a>
-                                    <div class="erweima">
+                                    <div id="showCode"><img src="images/icon1.png"></div>
+                                    <div class="erweima" id="EwmCode">
                                         <img src="images/erweima.jpg">
                                     </div>
                                 </div>
@@ -222,7 +223,7 @@
             </div>
         </div>
     </div>
-
+</div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/swiper.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
@@ -238,6 +239,17 @@
         });
         $("#gotoTop").click(function() {
             swiper1.slideTo(0, 1000, false);
+        });
+        $("#showCode").click(function(event) {
+            $("#EwmCode").show();
+        });
+
+
+        $('#company').on('click', function(event) {
+            var ewmEl = $('#showCode');
+            if ((!ewmEl.is(event.target) && ewmEl.has(event.target).length === 0) && $("#showCode").is(':visible')) {
+                $("#EwmCode").hide();
+            }
         });
 
     </script>

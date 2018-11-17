@@ -74,7 +74,7 @@
                                     <li v-for="item in jobType" @click="searchJobsType(item)">{{ item.jobtypename }}</li>
                                 </ul>
                             </div>
-                            <div class="form-group select" @click="goSearch">
+                            <div class="form-group select">
                                 <div @click="goSearch">
                                     <i></i>
                                     <input type="text" v-model="jobAreaSelected" disabled="true">
@@ -168,8 +168,8 @@
                             </div>
                             <div class="ft-item ft-link clearfix">
                                 <div class="wechat share-btn">
-                                    <a href="#"><img src="images/icon1.png"></a>
-                                    <div class="erweima">
+                                    <div id="showCode"><img src="images/icon1.png"></div>
+                                    <div class="erweima" id="EwmCode">
                                         <img src="images/erweima.jpg">
                                     </div>
                                 </div>
@@ -197,136 +197,149 @@
     <script type="text/javascript">
         var userAgent = navigator.userAgent;
         var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
-            var jobs = new Vue({
-                el: '#jobs',
-                data: {
-                    jobList: [],
-                    nextPage: 1,
-                    pageSize: 10,
-                    loadState: false,
-                    isNext: true,
-                    jobType: [{
-                        jobtypeid: 0,
-                        jobtypename: '所有类别'
-                    }],
-                    jobArea: [{
-                        jarea: '所有地区'
-                    }],
-                    jobTypeSelected: {
-                        jobtypeid: 0,
-                        jobtypename: '所有类别'
-                    },
-                    jobAreaSelected: '所有地区',
-                    jobSearchKey: '',
-                    searchStr: '',
+        var jobs = new Vue({
+            el: '#jobs',
+            data: {
+                jobList: [],
+                nextPage: 1,
+                pageSize: 10,
+                loadState: false,
+                isNext: true,
+                jobType: [{
+                    jobtypeid: 0,
+                    jobtypename: '所有类别'
+                }],
+                jobArea: [{
+                    jarea: '所有地区'
+                }],
+                jobTypeSelected: {
+                    jobtypeid: 0,
+                    jobtypename: '所有类别'
                 },
-                watch: {
-                    jobList: function(val) {
-                        if (val.length > 0) {
-                            this.$nextTick(function() {
-                                $('.recruitment .detial-btn').off('click');
-                                $('.recruitment .detial-btn').on('click', function() {
-                                    $(this).parents('li').toggleClass('on');
-                                    $(this).parents('li').siblings().removeClass('on');
-                                    $(this).parents('li').find('.specific').slideToggle();
-                                    $(this).parents('li').siblings().find('.specific').slideUp();
-                                });
+                jobAreaSelected: '所有地区',
+                jobSearchKey: '',
+                searchStr: '',
+            },
+            watch: {
+                jobList: function(val) {
+                    if (val.length > 0) {
+                        this.$nextTick(function() {
+                            $('.recruitment .detial-btn').off('click');
+                            $('.recruitment .detial-btn').on('click', function() {
+                                $(this).parents('li').toggleClass('on');
+                                $(this).parents('li').siblings().removeClass('on');
+                                $(this).parents('li').find('.specific').slideToggle();
+                                $(this).parents('li').siblings().find('.specific').slideUp();
                             });
-                        }
-                    }
-                },
-                created: function() {
-                    var the = this;
-                    axios.get('http://139.159.238.100/position/position.json?ptype=3').then(function(response){
-                        response = response.data;
-                        the.jobType = the.jobType.concat(response.jobtype);
-                        the.jobArea = the.jobArea.concat(response.areas);
-                    })
-                    this.loadList();
-                },
-                methods: {
-                    loadMore: function() {
-                        if (this.isNext) {
-                            this.loadList();
-                        }
-                    },
-                    loadList: function() {
-                        var the = this;
-                        the.loadState = true;
-                        axios.get(encodeURI('http://139.159.238.100/position/pageposition.json?pageNum=' + this.nextPage + '&pageSize=' + this.pageSize + this.searchStr)).then(function(response){
-                            response = response.data;
-                            the.nextPage += 1;
-                            the.isNext = response.isNext;
-                            the.jobList = the.jobList.concat(response.jobs);
-                            the.loadState = false;
                         });
-                    },
-                    searchJobs: function() {
-                        this.jobList = [];
-                        this.nextPage = 1;
-                        this.isNext = true;
-                        var jobTypeId = this.jobTypeSelected.jobtypeid ? this.jobTypeSelected.jobtypeid : '';
-                        var jobArea = this.jobAreaSelected == '所有地区' ? '' : this.jobAreaSelected;
-                        var jobName = this.jobSearchKey == '' ? '' : this.jobSearchKey;
-                        this.searchStr = '&jobtypeid=' + jobTypeId + '&jarea=' + jobArea + '&jobname=' + jobName
-                        this.loadList();
-                    },
-                    searchJobsType: function(item) {
-                        this.jobTypeSelected = item;
-                        this.searchJobs()
-                    },
-                    searchJobsArea: function(item) {
-                        this.jobAreaSelected = item;
-                        this.searchJobs()
-                    },
-                    goSearch: function() {
-                        $('html, body').animate({
-                            scrollTop: $('.recruit-form').offset().top
-                        }, 800);
                     }
                 }
-            })
-
-            $(function() {
-
-                $('.select').on('click', function(event) {
-                    event.stopPropagation();
-                    $(this).toggleClass('on').siblings('.select').removeClass('on');
-                    $(this).siblings('.select').removeClass('on');
-                    $(this).find('ul').slideToggle(300).siblings('.select').find('ul').slideUp(300);
-                    $(this).siblings('.select').find('ul').slideUp(300);
-                });
-                $('.select').find('li').on('click', function() {
-                    $(this).parents('.select').find('input').val($(this).html());
-                });
-
-                $('body').on('click', function() {
-                    $('.select').removeClass('on');
-                    $('.select').find('ul').slideUp();
-                });
-
-                //            $('.recruit-link').on('click', function(event) {
-                //                event.stopPropagation();
-                //                $('.erweima-box').show();
-                //            });
-
-                $('.filter-bg').on('click', function() {
-                    $(this).hide();
-                });
-
-                $("#ewmhide").click(function(event) {
-                    $("#ewmhide").hide();
-                    $("#ewmshow").show();
-                });
-
-                $(window).click(function(event) {
-                    var imgEl = $('#ewmhideImg');
-                    if ((!imgEl.is(event.target) && imgEl.has(event.target).length === 0) && $("#ewmshow").is(':visible')) {
-                        $("#ewmshow").hide();
-                        $("#ewmhide").show();
+            },
+            created: function() {
+                var the = this;
+                axios.get('http://139.159.238.100/position/position.json?ptype=3').then(function(response) {
+                    response = response.data;
+                    the.jobType = the.jobType.concat(response.jobtype);
+                    the.jobArea = the.jobArea.concat(response.areas);
+                })
+                this.loadList();
+            },
+            methods: {
+                loadMore: function() {
+                    if (this.isNext) {
+                        this.loadList();
                     }
-                });
+                },
+                loadList: function() {
+                    var the = this;
+                    the.loadState = true;
+                    axios.get(encodeURI('http://139.159.238.100/position/pageposition.json?pageNum=' + this.nextPage + '&pageSize=' + this.pageSize + this.searchStr)).then(function(response) {
+                        response = response.data;
+                        the.nextPage += 1;
+                        the.isNext = response.isNext;
+                        the.jobList = the.jobList.concat(response.jobs);
+                        the.loadState = false;
+                    });
+                },
+                searchJobs: function() {
+                    this.jobList = [];
+                    this.nextPage = 1;
+                    this.isNext = true;
+                    var jobTypeId = this.jobTypeSelected.jobtypeid ? this.jobTypeSelected.jobtypeid : '';
+                    var jobArea = this.jobAreaSelected == '所有地区' ? '' : this.jobAreaSelected;
+                    var jobName = this.jobSearchKey == '' ? '' : this.jobSearchKey;
+                    this.searchStr = '&jobtypeid=' + jobTypeId + '&jarea=' + jobArea + '&jobname=' + jobName
+                    this.loadList();
+                },
+                searchJobsType: function(item) {
+                    this.jobTypeSelected = item;
+                    this.searchJobs()
+                },
+                searchJobsArea: function(item) {
+                    this.jobAreaSelected = item;
+                    this.searchJobs()
+                },
+                goSearch: function() {
+                    $('html, body').animate({
+                        scrollTop: $('.recruit-form').offset().top
+                    }, 800);
+                }
+            }
+        })
+
+        $(function() {
+
+            $('.select').on('click', function(event) {
+                event.stopPropagation();
+                $(this).toggleClass('on').siblings('.select').removeClass('on');
+                $(this).siblings('.select').removeClass('on');
+                $(this).find('ul').slideToggle(300).siblings('.select').find('ul').slideUp(300);
+                $(this).siblings('.select').find('ul').slideUp(300);
             });
+            $('.select').find('li').on('click', function() {
+                $(this).parents('.select').find('input').val($(this).html());
+            });
+
+            $('body').on('click', function() {
+                $('.select').removeClass('on');
+                $('.select').find('ul').slideUp();
+            });
+
+            //            $('.recruit-link').on('click', function(event) {
+            //                event.stopPropagation();
+            //                $('.erweima-box').show();
+            //            });
+
+            $('.filter-bg').on('click', function() {
+                $(this).hide();
+            });
+
+            $("#ewmhide").click(function(event) {
+                $("#ewmhide").hide();
+                $("#ewmshow").show();
+            });
+
+            $('#jobs').click(function(event) {
+                var imgEl = $('#ewmhideImg');
+                if ((!imgEl.is(event.target) && imgEl.has(event.target).length === 0) && $("#ewmshow").is(':visible')) {
+                    $("#ewmshow").hide();
+                    $("#ewmhide").show();
+                }
+            });
+
+            $("#showCode").click(function(event) {               
+                $("#EwmCode").show();
+            });
+            
+            
+            $('#jobs').on('click', function(event) {
+                var ewmEl = $('#showCode');
+                if ((!ewmEl.is(event.target) && ewmEl.has(event.target).length === 0) && $("#showCode").is(':visible')) {
+                    $("#EwmCode").hide();                    
+                }
+            });
+
+        });
 
         //        $(document).ready(function() {
         //
