@@ -17,7 +17,6 @@ body {
 
 .full-page {
     height: 100%;
-    overflow: 100%;
 
 }
 
@@ -1195,6 +1194,12 @@ body {
 .contact-page {
     background: url('../images/bg.jpg') no-repeat;
     background-size: 100% auto;
+    position: relative;
+}
+
+.mw-contact {
+    position: relative;
+    min-height: 660px;
 }
 
 .contact-box {
@@ -1767,10 +1772,6 @@ body {
         font-size: 16px;
     }
 
-    .full-page {
-        overflow: hidden;
-        height: 100%;
-    }
 
     .mw-popu .popu-info {        
         padding: 0px 20px;

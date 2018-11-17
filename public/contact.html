@@ -9,6 +9,18 @@
     <title>联系我们</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+     
+     
+         <!--[if ( lt IE 9)|(!IE)]> -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- <![endif]-->    
+    <!--[if IE 9]> 
+     <link rel="stylesheet" type="text/css" href="cssie9/style.css" />
+     <link rel="stylesheet" type="text/css" href="cssie9/reset.css" />
+    <![endif]-->
+  
+     
       <script type="text/javascript">
         var _hmt = _hmt || [];
         (function() {
@@ -21,8 +33,8 @@
     </script>
 </head>
 
-<body class="full-page blue-bg">
-    <div id="mw-contact" style="height: 100%;">
+<body class="full-page blue-bg contact-body">
+    <div id="mw-contact" class="mw-contact" style="height: 100%;">
         <div id="hd">
             <div class="wp clearfix">
                 <a href="index.html" class="hd-logo fl">
@@ -104,8 +116,11 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/vue.js"></script>
+<script src="js/bluebird.min.js"></script>
+<script src="js/axios.min.js"></script>
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.10&key=您申请的key值"></script>
 <script type="text/javascript">
+    //$.support.cors = true;
     var contant = new Vue({
         el: "#mw-contact",
         data: {
@@ -143,20 +158,22 @@
                     $('#messageInput').focus();
                 }
                 else {
-                    var the = this
-                    $.ajax({
-                        url: 'http://139.159.238.100/leave/commitleave.json?phone=' + the.phone + '&email=' + the.email + '&leave=' + the.message,
-                        success: function(response) {
-                            if (response.result_code == 1) {
-                                the.msg = '提交成功<br />我们将尽快答复 ';
-                                the.phone = '';
-                                the.email = '';
-                                the.message = '';
-                            } else {
-                                the.msg = response.result_msg;
-                            }
+                    var the = this;
+                    axios.post('http://139.159.238.100/leave/commitleave.json', {
+                        phone: the.phone,
+                        email: the.email,
+                        leave: the.message
+                    }).then(function(response){
+                        response = response.data
+                        if (response.result_code == 1) {
+                            the.msg = '提交成功<br />我们将尽快答复 ';
+                            the.phone = '';
+                            the.email = '';
+                            the.message = '';
+                        } else {
+                            the.msg = response.result_msg;
                         }
-                    });
+                    })
                 }
             },
             reloadPage: function() {

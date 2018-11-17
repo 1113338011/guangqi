@@ -136,6 +136,8 @@
     </div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/vue.js"></script>
+    <script src="js/bluebird.min.js"></script>
+    <script src="js/axios.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript">
         function getQueryString(name) {
@@ -167,36 +169,30 @@
                     this.defaultType = newsType
                 }
                 var the = this
-                $.ajax({
-                    url: 'http://139.159.238.100/infor/infor.json?ptype=1&newstype=' + the.defaultType,
-                    success: function(response) {
-                        if (response.result_code == 1) {
-                            the.newsType = response.newstype
+                axios.get('http://139.159.238.100/infor/infor.json?ptype=1&newstype=' + the.defaultType).then(function(response){
+                    response = response.data
+                    if (response.result_code == 1) {
+                        the.newsType = response.newstype
+                    }
+                });
+                axios.get('http://139.159.238.100/infor/news.json?ptype=2&newstype=' + the.defaultType).then(function(response){
+                    response = response.data
+                    if (response.result_code == 1) {
+                        if (response.news.length > 0) {
+                            the.newsList = response.news
                         }
                     }
                 });
-                $.ajax({
-                    url: 'http://139.159.238.100/infor/news.json?ptype=2&newstype=' + the.defaultType,
-                    success: function(response) {
-                        if (response.result_code == 1) {
-                            if (response.news.length > 0) {
-                                the.newsList = response.news
-                            }
-                        }
-                    }
-                });
-                $.ajax({
-                    url: 'http://139.159.238.100/infor/news.json?ptype=2&top=1&newstype=' + this.defaultType,
-                    success: function(response) {
-                        if (response.result_code == 1) {
-                            if (response.news.length > 0) {
-                                the.topNews.title = response.news[0].newstitle;
-                                the.topNews.date = response.news[0].newscreattime;
-                                the.topNews.digest = response.news[0].newsdigest;
-                                the.topNews.id = response.news[0].newsid;
-                                the.topNews.type = response.news[0].newstype;
-                                the.topNews.banner = response.news[0].newsbanner;
-                            }
+                axios.get('http://139.159.238.100/infor/news.json?ptype=2&top=1&newstype=' + this.defaultType).then(function(response){
+                    response = response.data
+                    if (response.result_code == 1) {
+                        if (response.news.length > 0) {
+                            the.topNews.title = response.news[0].newstitle;
+                            the.topNews.date = response.news[0].newscreattime;
+                            the.topNews.digest = response.news[0].newsdigest;
+                            the.topNews.id = response.news[0].newsid;
+                            the.topNews.type = response.news[0].newstype;
+                            the.topNews.banner = response.news[0].newsbanner;
                         }
                     }
                 });

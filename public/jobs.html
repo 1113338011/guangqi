@@ -191,11 +191,12 @@
     </div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/vue.js"></script>
+    <script src="js/bluebird.min.js"></script>
+    <script src="js/axios.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript">
         var userAgent = navigator.userAgent;
         var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
-        if (!isIE) {
             var jobs = new Vue({
                 el: '#jobs',
                 data: {
@@ -236,13 +237,11 @@
                 },
                 created: function() {
                     var the = this;
-                    $.ajax({
-                        url: 'http://139.159.238.100/position/position.json?ptype=3',
-                        success: function(response) {
-                            the.jobType = the.jobType.concat(response.jobtype);
-                            the.jobArea = the.jobArea.concat(response.areas);
-                        }
-                    });
+                    axios.get('http://139.159.238.100/position/position.json?ptype=3').then(function(response){
+                        response = response.data;
+                        the.jobType = the.jobType.concat(response.jobtype);
+                        the.jobArea = the.jobArea.concat(response.areas);
+                    })
                     this.loadList();
                 },
                 methods: {
@@ -254,15 +253,12 @@
                     loadList: function() {
                         var the = this;
                         the.loadState = true;
-                        $.ajax({
-                            url: encodeURI('http://139.159.238.100/position/pageposition.json?pageNum=' + this.nextPage + '&pageSize=' + this.pageSize + this.searchStr),
-                            type: 'GET',
-                            success: function(response) {
-                                the.nextPage += 1;
-                                the.isNext = response.isNext;
-                                the.jobList = the.jobList.concat(response.jobs);
-                                the.loadState = false;
-                            }
+                        axios.get(encodeURI('http://139.159.238.100/position/pageposition.json?pageNum=' + this.nextPage + '&pageSize=' + this.pageSize + this.searchStr)).then(function(response){
+                            response = response.data;
+                            the.nextPage += 1;
+                            the.isNext = response.isNext;
+                            the.jobList = the.jobList.concat(response.jobs);
+                            the.loadState = false;
                         });
                     },
                     searchJobs: function() {
@@ -330,14 +326,7 @@
                         $("#ewmhide").show();
                     }
                 });
-
-
-
-
-
-
             });
-        }
 
         //        $(document).ready(function() {
         //

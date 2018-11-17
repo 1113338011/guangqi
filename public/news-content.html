@@ -106,6 +106,8 @@
     </div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/vue.js"></script>
+    <script src="js/bluebird.min.js"></script>
+    <script src="js/axios.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript">
         function getQueryString(name) {
@@ -134,27 +136,25 @@
                     this.newsId = newsId
                     this.newsType = newsType
                     var the = this;
-                    $.ajax({
-                        url: 'http://139.159.238.100/infor/news.json?newstype=' + this.newsType,
-                        success: function(response) {
-                            if (response.result_code == 1) {
-                                if (response.news.length > 0) {
-                                    response.news.forEach(function(item, index) {
-                                        if (item.newsid == the.newsId) {
-                                            the.newsTitle = item.newstitle
-                                            the.newsDate = item.newscreattime
-                                            the.newsContent = item.newsbody
-                                            the.newsFrom = item.newsfrom
-                                            the.newsAuthor = item.newswhere
-                                        }
-                                    });
-                                }
-                            }
-                            if (the.newsContent == '' && the.newsTitle == '' && the.newsDate == '' && the.newsFrom == '' && the.newsAuthor == '') {
-                                the.newsContent = '文章不存在';
+                    axios.get('http://139.159.238.100/infor/news.json?newstype=' + this.newsType).then(function(response){
+                        response = response.data;
+                        if (response.result_code == 1) {
+                            if (response.news.length > 0) {
+                                response.news.forEach(function(item, index) {
+                                    if (item.newsid == the.newsId) {
+                                        the.newsTitle = item.newstitle
+                                        the.newsDate = item.newscreattime
+                                        the.newsContent = item.newsbody
+                                        the.newsFrom = item.newsfrom
+                                        the.newsAuthor = item.newswhere
+                                    }
+                                });
                             }
                         }
-                    });
+                        if (the.newsContent == '' && the.newsTitle == '' && the.newsDate == '' && the.newsFrom == '' && the.newsAuthor == '') {
+                            the.newsContent = '文章不存在';
+                        }
+                    })
                 }
             },
             methods: {

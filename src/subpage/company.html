@@ -9,9 +9,18 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>企业介绍</title>
+    <!--[if ( lt IE 9)|(!IE)]> -->
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/swiper.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- <![endif]-->    
+    <!--[if IE 9]> 
+     <link rel="stylesheet" type="text/css" href="cssie9/style.css" />
+     <link rel="stylesheet" type="text/css" href="cssie9/reset.css" />
+    <![endif]-->
+  
+
+
 
     <script type="text/javascript">
         var _hmt = _hmt || [];
@@ -214,10 +223,11 @@
         </div>
     </div>
 
-
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/swiper.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
+
+    <!--[if (gte IE 9)|(!IE)]> -->
     <script>
         var swiper1 = new Swiper('.swiper-container-1', {
             direction: 'vertical',
@@ -227,10 +237,15 @@
             slidesPerView: 'auto'
         });
         $("#gotoTop").click(function() {
-           swiper1.slideTo(0, 1000, false);
+            swiper1.slideTo(0, 1000, false);
         });
 
     </script>
+    <!-- <![endif]-->
+    <!--[if lt IE 9]>
+     
+    <![endif]-->
+
 
 </body>
 

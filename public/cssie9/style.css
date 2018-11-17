@@ -4,20 +4,20 @@
 @import"case.css";
 
 html {
-    height: 100%;
+
     overflow-x: hidden;
 }
 
 body {
     font-family: "SourceHanSansCh", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei";
     font-size: 14px;
-    height: 100%;
+
 
 }
 
 .full-page {
-    height: 100%;
-    overflow: 100%;
+    height: auto;
+    overflow: visible;
 
 }
 
@@ -352,6 +352,7 @@ body {
 
 .recruit .recruit-list {
     padding: 40px 0 108px;
+    min-height: 600px;
 }
 
 .recruit .recruit-list .width1 {
@@ -469,6 +470,14 @@ body {
 
 }
 
+.mw-contact {
+    position: relative;
+    min-height: 560px;
+}
+
+.contact-body {
+    overflow: auto;
+}
 
 .specific-item .butt .butt-td {
     background: #0065ab;
@@ -542,7 +551,16 @@ body {
     border-color: #333;
 }
 
+.mw-contact {
+    position: relative;
+    min-height: 660px;
+}
 
+.full-page {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
 
 @media screen and (max-width: 1680px) {
     .wp {
@@ -799,387 +817,6 @@ body {
     }
 }
 
-@media screen and (max-width: 992px) {
-    .wp {
-        width: 94%;
-    }
-
-    .hd-nav .menu-black a {
-        color: #fff;
-    }
-
-    .hd-nav .menu-black li.on a,
-    .hd-nav .menu-black li a:hover {
-        color: #fff !important;
-        border-color: #fff;
-    }
-
-
-    .inner-wp {
-        width: 92%;
-    }
-
-    #hd {
-        padding-top: 30px;
-    }
-
-    #hd .hd-logo img {
-        height: 28px;
-    }
-
-    .hd-login {
-        line-height: 32px;
-        font-size: 16px;
-    }
-
-    .hd-nav {
-        margin-right: 0;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: #0065ab;
-        z-index: 999;
-        box-sizing: border-box;
-        padding: 100px 30px 0;
-        transform: translateX(100%);
-        transition: 0.4s;
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
-
-    .hd-nav ul li {
-        margin: 0;
-        float: none;
-        padding: 10px 18px;
-        border-bottom: 1px solid #6ea8d1;
-    }
-
-    .hd-nav ul li a {
-        line-height: 30px;
-        font-size: 16px;
-        border-width: 0;
-    }
-
-    .hd-nav.nav-show {
-        transform: translateX(0);
-        transition: 0.4s;
-    }
-
-    .nav-btn {
-        display: block;
-        width: 32px;
-        height: 32px;
-        background: url('../images/menu.png');
-        background-size: 100% 100%;
-        margin-left: 16px;
-    }
-
-    .nav-close {
-        display: block;
-        width: 30px;
-        height: 30px;
-        background: url('../images/close.png');
-        background-size: 100% 100%;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-    }
-
-
-    .news-bloack .nav-btn {
-        display: block;
-        width: 32px;
-        height: 32px;
-        background: url('../images/menu_black.png');
-        background-size: 100% 100%;
-        margin-left: 16px;
-    }
-
-
-    #ft {
-        padding: 44px 0 28px;
-    }
-
-    #ft .ft-logo {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    #ft .ft-item {
-        width: 30%;
-        margin: 0 1.5%;
-    }
-
-    #ft .ft-item::before {
-        width: 100%;
-    }
-
-    #ft .ft-link .share-btn {
-        margin-right: 10px;
-    }
-
-    #ft .ft-link a {
-        width: 24px;
-    }
-
-    #ft .ft-link .wechat .erweima {
-        bottom: 30px;
-    }
-
-    #ft .copyright {
-        margin-top: 16px;
-        text-align: center;
-    }
-
-    .page-banner .text {
-        top: 50%;
-        transform: translateY(-50%)
-    }
-
-    .recruit {
-        margin-top: 30px;
-    }
-
-    .recruit .recruit-form {
-        height: auto;
-        position: relative;
-        top: 0;
-        padding-bottom: 24px;
-    }
-
-    .recruit .recruit-form h2 {
-        font-size: 36px;
-        padding: 30px 0 18px;
-    }
-
-    .recruit .recruit-form .recruit-link {
-        width: 160px;
-    }
-
-    .recruit .recruit-list {
-        padding: 20px 0 64px;
-    }
-
-    .recruit .recruit-list .list-title {
-        line-height: 44px;
-        padding: 0 16px;
-        font-size: 16px;
-    }
-
-    .recruit .recruit-list .category {
-        padding: 15px 16px;
-        font-size: 14px;
-    }
-
-    .recruit .recruit-list .category .detial-btn {
-        width: 32px;
-        height: 32px;
-        margin: -16px 0 0 -16px;
-    }
-
-    .recruit .recruit-list .specific {
-        padding: 24px 16px;
-    }
-
-    .recruit .recruit-list .specific-item {
-        padding-left: 104px;
-        margin-bottom: 18px;
-    }
-
-    .recruit .recruit-list .specific-item span {
-        font-size: 18px;
-    }
-
-    .recruit .recruit-list .specific-item .text {
-        padding-top: 10px;
-        font-size: 14px;
-    }
-
-    .swiper-container-news-1 {
-        height: auto;
-        overflow: hidden;
-    }
-
-    .swiper-container-news-1 .swiper-wrapper {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .swiper-container-news-1 .swiper-container,
-    .swiper-container-news-1 .swiper-slide-full {
-        height: auto;
-    }
-
-}
-
-
-@media screen and (max-width: 768px) {
-    .wp {
-        width: 94%;
-    }
-
-    .inner-wp {
-        width: 94%;
-    }
-
-    #hd {
-        padding-top: 15px;
-    }
-
-    #hd .hd-logo img {
-        height: 24px;
-    }
-
-    .hd-login {
-        line-height: 30px;
-        font-size: 14px;
-    }
-
-    .nav-btn {
-        display: block;
-        width: 30px;
-        height: 30px;
-    }
-
-    #ft {
-        padding: 30px 0 20px;
-    }
-
-    #ft .ft-logo {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    #ft .ft-item {
-        width: 100%;
-        margin: 0 0 20px;
-    }
-
-    #ft .ft-item::before {
-        width: 100%;
-        height: 1px;
-        border-radius: 1px;
-    }
-
-    #ft .ft-nav {
-        display: flex;
-        justify-content: space-around;
-        font-size: 12px;
-    }
-
-    #ft .ft-contact p {
-        padding: 0 15px;
-    }
-
-    #ft .ft-link {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    #ft .ft-link .share-btn {
-        margin: 0;
-        float: none;
-    }
-
-    #ft .ft-link a {
-        width: 30px;
-    }
-
-    #ft .ft-link .wechat .erweima {
-        bottom: 36px;
-    }
-
-    #ft .copyright {
-        margin-top: 0;
-    }
-
-    .page-banner .text {
-        top: 64%;
-    }
-
-    .page-banner .text h1 {
-        font-size: 24px;
-    }
-
-    .page-banner .text p {
-        font-size: 16px;
-    }
-
-    .recruit {
-        margin-top: 24px;
-    }
-
-    .recruit .recruit-form h2 {
-        font-size: 30px;
-        padding: 48px 0 18px;
-    }
-
-    .recruit .recruit-form .form-group {
-        width: 100%;
-        margin-bottom: 12px;
-    }
-
-    .recruit .recruit-form .form-group ul {
-        z-index: 25;
-    }
-
-    .recruit .recruit-list {
-        padding: 20px 0 40px;
-    }
-
-    .recruit .recruit-list .list-title {
-        line-height: 36px;
-        padding: 0 10px;
-        font-size: 14px;
-    }
-
-    .recruit .recruit-list .category {
-        padding: 10px 10px;
-        font-size: 12px;
-    }
-
-    .recruit .recruit-list .category .detial-btn {
-        width: 24px;
-        height: 24px;
-        margin: -12px 0 0 -12px;
-    }
-
-    .recruit .recruit-list .width1 {
-        width: 16%;
-    }
-
-    .recruit .recruit-list .width2,
-    .recruit .recruit-list .width3 {
-        width: 35%;
-    }
-
-    .recruit .recruit-list .width4 {
-        width: 14%;
-    }
-
-    .recruit .recruit-list .specific {
-        padding: 16px 15px;
-    }
-
-    .recruit .recruit-list .specific-item {
-        padding-left: 88px;
-        margin-bottom: 18px;
-    }
-
-    .recruit .recruit-list .specific-item span {
-        font-size: 16px;
-    }
-
-    .recruit .recruit-list .specific-item .text {
-        padding-top: 4px;
-    }
-}
-
 .blue-bg {
     background: #0165ab;
 }
@@ -1187,16 +824,21 @@ body {
 .contact-page {
     background: url('../images/bg.jpg') no-repeat;
     background-size: 100% auto;
+    position: relative;
 }
 
 .contact-box {
-    width: 80%;
+    position: absolute;
+    width: 1200px;
+    top: 52%;
+    left: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     box-sizing: border-box;
-    border-radius: 4px;   
-    height: 60%;
+    border-radius: 4px;
+    overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-    margin:0px auto;   
-    position: relative;    
 }
 
 .contact-box .left-bar {
@@ -1214,14 +856,6 @@ body {
 
 }
 
-.contact-box .left-bar .ct-logo {
-    padding-top: 56px;
-    display: block;
-}
-
-.contact-box .left-bar .ct-logo img {
-    max-width: 80%;
-}
 
 .contact-box .left-bar .erweima {
     margin-top: 50%;
@@ -1235,12 +869,12 @@ body {
 
 .contact-box .left-bar .erweima img {
     width: 180px;
+    height: 180px;
 }
 
 .contact-box .right-con {
     margin-left: 30%;
     background: #fff;
-    height: 100%;
 }
 
 .contact-box .right-con .con-inner {
@@ -1275,6 +909,7 @@ body {
     box-sizing: border-box;
     padding-left: 70px;
     position: relative;
+    margin-bottom: 50px;
 }
 
 .contact-box .right-con .info-item img {
@@ -1282,6 +917,7 @@ body {
     top: 0;
     left: 0;
     width: 50px;
+    height: auto;
 }
 
 .contact-box .right-con .info-item h5 {
@@ -1373,14 +1009,14 @@ body {
 
 .mw-popu {
     position: fixed;
-    background: #fff;
-    top: 30%;
-    bottom: 30%;
-    left: 25%;
-    right: 25%;
+    top: 35%;
+    bottom: 35%;
+    left: 35%;
+    right: 35%;
     z-index: 9;
     padding: 5%;
     display: none;
+    border-radius: 10px;
 }
 
 .mw-popu.show {
@@ -1391,6 +1027,10 @@ body {
     width: 100%;
     height: 100%;
     display: table;
+    background: rgba(0, 0, 0, .6);
+    border-radius: 10px;
+    color: #fff;
+    line-height: 1.8;
 }
 
 .mw-mask {
@@ -1406,6 +1046,7 @@ body {
 
 .mw-mask.show {
     display: block;
+    opacity: 0;
 }
 
 .mw-popu .popu-info-td {
@@ -1488,6 +1129,7 @@ body {
 
     .contact-box .left-bar .erweima img {
         width: 164px;
+        height: 164px;
     }
 
     .contact-box .right-con .con-inner {
@@ -1510,6 +1152,8 @@ body {
 
     .contact-box .right-con .info-item img {
         width: 44px;
+        height: 44px;
+
     }
 
     .contact-box .right-con .info-item h5 {
@@ -1577,6 +1221,7 @@ body {
 
     .contact-box .left-bar .erweima img {
         width: 144px;
+        height: 144px;
     }
 
     .contact-box .right-con .con-inner {
@@ -1604,6 +1249,7 @@ body {
 
     .contact-box .right-con .info-item img {
         width: 40px;
+        height: 40px;
     }
 
     .contact-box .right-con .info-item h5 {
@@ -1681,6 +1327,7 @@ body {
 
     .contact-box .left-bar .erweima img {
         width: 120px;
+        height: 120px;
     }
 
     .contact-box .right-con .con-inner {
@@ -1708,6 +1355,7 @@ body {
 
     .contact-box .right-con .info-item img {
         width: 40px;
+        height: auto;
     }
 
     .contact-box .right-con .info-item h5 {
@@ -1753,225 +1401,11 @@ body {
     .full-page {
         overflow: hidden;
         height: 100%;
-    }
-}
-
-
-@media screen and (max-width: 992px) {
-    .contact-box {
-        width: 88%;
-    }
-
-    .c-copyright {
-        width: 88%;
-        left: 6%;
-    }
-
-    .page-two {
-        overflow: hidden;
-        height: auto;
-    }
-
-}
-
-@media screen and (max-width: 768px) {
-    .full-page {
-        height: auto;
-    }
-
-    .contact-box {
-        width: 90%;
         position: relative;
-        top: 0;
-        left: 0;
-        margin: 64px auto 0;
-        transform: translate(0, 0);
     }
 
-    .c-copyright {
-        width: 90%;
-        left: 5%;
+    .mw-popu .popu-info {
+        padding: 0px 20px;
+        margin-left: -20px;
     }
-
-    .contact-box .left-bar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        background: url('../images/bg2.jpg');
-        background-size: 100% auto;
-    }
-
-    .contact-box .left-bar .ct-logo {
-        display: none;
-    }
-
-    .contact-box .left-bar .erweima {
-        margin: 10px 0px 20px 0px;
-        width: 100%;
-
-    }
-
-    .contact-box .left-bar .erweima h4 {
-        font-size: 14px;
-        margin-bottom: 4px;
-    }
-
-
-    .contact-box .left-bar .erweima img {
-        width: 90px;
-    }
-
-    .contact-box .right-con {
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-    .contact-box .right-con .con-inner {
-        padding: 12px 20px 24px;
-    }
-
-    .contact-box .right-con h1 {
-        font-size: 30px;
-        line-height: 32px;
-        margin-bottom: 10px;
-    }
-
-    .contact-box .right-con .address {
-        font-size: 16px;
-        margin-bottom: 10px 0;
-    }
-
-    .contact-box .right-con .info-item {
-        width: 100%;
-        padding-left: 44px;
-        margin-bottom: 12px;
-    }
-
-    .contact-box .right-con .info-item img {
-        width: 36px;
-    }
-
-    .contact-box .right-con .info-item h5 {
-        font-size: 12px;
-        line-height: 18px;
-    }
-
-    .contact-box .right-con .info-item p {
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-    .contact-box .right-con form {
-        margin-top: 8px;
-    }
-
-    .contact-box .right-con .form-group {
-        margin-bottom: 12px;
-    }
-
-    .contact-box .right-con .form-group p {
-        font-size: 14px;
-        line-height: 1.75;
-    }
-
-    .contact-box .right-con .input {
-        width: 100%;
-    }
-
-    .contact-box .right-con .form-group input {
-        height: 32px;
-        padding: 0 12px;
-        line-height: 30px;
-        font-size: 14px;
-    }
-
-    .contact-box .right-con .textarea textarea {
-        padding: 10px 15px;
-        font-size: 14px;
-        line-height: 20px;
-        height: 90px;
-    }
-
-    .contact-box .right-con .submit {
-        width: 60%;
-        height: 32px;
-        border-radius: 16px;
-        line-height: 32px;
-        font-size: 14px;
-        margin-top: 20px;
-    }
-
-    .c-copyright {
-        position: relative;
-        width: 100%;
-        left: 0;
-        margin-left: 0;
-        bottom: 0;
-        text-align: center;
-        box-sizing: border-box;
-        padding: 16px 20px 20px;
-    }
-
-    .map-wp {
-        width: 90%;
-        height: 40%;
-        left: 5%;
-        top: 30%;
-        padding: 15px;
-    }
-
-
-
-}
-
-@media screen and (max-width: 480px) {
-    .specific-item .linkurl a {
-        margin: 10px 0px;
-        width: 70px;
-        height: 25px;
-        display: inline-block;
-        margin-right: 40px;
-    }
-}
-
-#pageflip {
-    right: 0px;
-    float: right;
-    position: absolute;
-    top: 0px;
-    transition: all 600ms ease;
-}
-
-#pageflip img {
-    z-index: 99;
-    right: 0px;
-    position: absolute;
-    top: 0px;
-    ms-interpolation-mode: bicubic;
-}
-
-#pageflip .msg_block {
-    right: 0px;
-    background: url(../images/ewmpic.png) no-repeat right top;
-    background-size: 210px auto;
-    overflow: hidden;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    height: 100%
-}
-
-#pageflip img {
-    width: 100%;
-    height: 100%
-}
-
-#pageflip.open {
-    transform: translate(4.2, 4.2);
-}
-
-#ewmshow {
-    display: none;
-    width: 166px;
-    height: 166px;
 }

@@ -1,0 +1,644 @@
+.mw-bannerbg {
+
+    position: relative;
+    overflow: hidden;
+}
+
+.mw-bannernewsbg {
+    height: 0;
+    padding-bottom: 0%;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.mw-bannernewsbg .mw-container {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    bottom: 0;
+}
+
+.mw-bannerbgtwo {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mw-bannerbg .mw-container {
+    position: relative;
+    z-index: 1;
+
+}
+
+.mw-bannerimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    z-index: -1;
+    overflow: hidden;
+}
+
+
+.mw-newsimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    z-index: -1;
+}
+
+
+.mw-container {
+    width: 90%;
+    position: relative;
+    margin: 0px auto;
+    height: 100%;
+    max-width: 1600px;
+}
+
+.menuflex {
+    width: 100%;
+    position: absolute;
+    z-index: 9999;
+}
+
+.mw-container .left-line,
+.mw-container .right-line {
+    background: rgba(232, 232, 232, .23);
+    width: 1px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 9;
+}
+
+.mw-container .left-line {
+    left: 0;
+}
+
+.mw-container .right-line {
+    right: 0;
+}
+
+.mw-container .banner-text {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    color: #fff;
+    z-index: 9;
+    width: 80%;
+}
+
+.td-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.mw-container .newsbanner-text {
+    color: #fff;
+    z-index: 9;
+    /*width: 45%;*/
+}
+
+.mw-container .newsbanner-text .cn {
+    font-size: 52px;
+
+}
+
+.mw-container .newsbanner-text .line {
+    height: 3px;
+    background: #fff;
+    width: 40px;
+    margin: 20px 0px;
+    display: block;
+}
+
+.mw-container .newsbanner-text .en {
+    font-size: 24px;
+    line-height: 1.8;
+}
+
+.news-top-more {
+    margin-top: 20px;
+    height: 45px;
+    width: 150px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    line-height: 45px;
+    display: block;
+}
+
+.news-top-more .more-hard {
+    background: url(../images/hard_hover.png) no-repeat center;
+    background-size: auto 20px;
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    float: left;
+}
+
+.news-top-more .more-text {
+    color: rgba(255, 255, 255, 1);
+    width: 100px;
+    font-size: 18px;
+    height: 45px;
+    float: right;
+}
+
+.news-top-more:hover {
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.news-top-more:hover .more-hard {
+    background: url(../images/hard_hover.png) no-repeat center;
+    background-size: auto 20px;
+}
+
+.news-top-more:hover .more-text {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+
+
+
+
+.mw-container .banner-text .cn {
+    font-size: 52px;
+
+}
+
+.mw-container .banner-text .line {
+    height: 3px;
+    background: #fff;
+    width: 40px;
+    margin: 20px 0px;
+    display: block;
+}
+
+.mw-container .banner-text .en {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+
+
+.hd-bt-box {
+    height: 23%;
+    background: #0065ab;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 9;
+}
+
+.hd-bt-box .textbox {
+    width: 70%;
+    box-sizing: border-box;
+    padding-top: 40px;
+    padding-left: 40px;
+    line-height: 2.0;
+    font-size: 16px;
+}
+
+.hd-bt-box .downbox {
+    width: 15%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+}
+
+.hd-bt-box .amni {
+    position: absolute;
+    top: 50%;
+    width: 56px;
+    height: 100%;
+    box-sizing: border-box;
+    left: 50%;
+    margin: -75px auto auto -28px;
+}
+
+.hd-bt-box .amni .top {
+    height: 50px;
+    background: url(../images/down_top.png) no-repeat center;
+    background-size: 80%;
+}
+
+.hd-bt-box .amni .min {
+    width: 20px;
+    height: 83px;
+    animation-name: myfirst;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    /* Safari and Chrome: */
+    -webkit-animation-name: myfirst;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+    margin: 0px auto;
+}
+
+.hd-bt-box .amni .bot {
+    background: url(../images/down_bottom.png) no-repeat center top;
+    height: 30px;
+    background-size: 40%;
+}
+
+
+@keyframes myfirst {
+    0% {
+        background: url(../images/down_min.png) repeat-y center top;
+        background-size: 100%;
+    }
+
+    100% {
+        background: url(../images/down_min.png) repeat-y center bottom;
+        background-size: 100%;
+    }
+}
+
+@-webkit-keyframes myfirst
+
+/* Safari 与 Chrome */
+    {
+    0% {
+        background: url(../images/down_min.png) repeat-y center top;
+        background-size: 40%;
+    }
+
+    100% {
+        background: url(../images/down_min.png) repeat-y center bottom;
+        background-size: 40%;
+    }
+}
+
+.swiper-slide-full {
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
+
+.swiper-slide-footer {
+    height: 300px;
+    background-color: #333;
+}
+
+.swiper-slide-auto {
+    height: auto !important;
+}
+
+.mw-swiper {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+
+}
+
+.swiper-text {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    width: 100%;
+
+}
+
+.swiper-text .line {
+    height: 4px;
+    background: #fff;
+    width: 80px;
+    margin: 20px 0px;
+    display: block;
+}
+
+.mw-swiper .swiper-text01 {
+    font-size: 90px;
+    color: #fff;
+    letter-spacing: 5px;
+
+}
+
+.mw-swiper .swiper-text02 {
+    margin-top: 30px;
+    font-size: 22px;
+    color: #fff;
+    width: 40%;
+}
+
+/*
+.page-two {
+    background: #0065ab url(../images/bg-two.jpg) no-repeat right bottom;
+    background-size: contain;
+}
+
+.page-two .leftbox {
+    background: #fff;
+    width: 68%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5%;
+    float: left;
+    position: relative;
+    padding-right: 1%;
+}
+*/
+
+.top-list {
+    margin-top: 50px;
+    height: 60px;
+}
+
+.top-list a {
+    display: inline-block;
+    margin: 0px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4e4f51;
+    padding: 0px 5px;
+}
+
+.top-list a:first-child {
+    margin-left: 0px;
+}
+
+.top-list a:hover {
+    color: #0065ab;
+}
+
+.top-list a.active {
+    color: #333;
+    border-bottom: 2px solid #333;
+    line-height: 2.2;
+}
+
+.news-list-main {
+    margin: 0px -15px;
+    overflow: hidden;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.news-list-main .listbox {
+    width: 33.33%;
+    height: auto;
+    padding: 0px 15px;
+    float: left;
+    box-sizing: border-box;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+
+.news-list-main .listbox .pic {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+    padding-bottom: 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #eee;
+}
+
+.news-list-main .listbox .textbox {
+    margin-top: 10px;
+    height: 80px;
+}
+
+
+
+.news-list-main .listbox .textbox {
+    margin-top: 15px;
+    height: 120px;
+}
+
+.news-list-main .listbox .textbox .name {
+    font-size: 26px;
+}
+
+.news-list-main .listbox .textbox .name a {
+    color: #333;
+}
+
+.news-list-main .listbox:hover .name {
+    color: #17478f;
+}
+
+.news-list-main .listbox .textbox .time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+.mainbox {
+    padding: 20px;
+    height: 95%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+
+.mainbox::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.newsmainbox {
+    width: 75%;
+    margin: 0px auto;
+    padding-top: 200px;
+    overflow: hidden;
+}
+
+.newsmainbox .title {
+    font-size: 36px;
+    color: #202020;
+    font-weight: bold;
+
+}
+
+.newsmainbox .data {
+    color: #4e4f51;
+    margin: 10px 0px;
+
+}
+
+.newsmainbox .data span {
+    margin: 0px 10px;
+    display: inline-block;
+}
+
+.newsmainbox .data span:first-child {
+    margin-left: 0;
+}
+
+.newsmainbox .content {
+    margin: 20px 0px;
+    height: 100%;
+    font-size: 18px;
+}
+
+.newsmainbox .content img {
+    width: 100%;
+    height: auto;
+}
+
+.mainbox .wp_icobox {
+    width: 30px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 5%;
+}
+
+.mainbox img {
+    width: 100%;
+    height: auto;
+}
+
+
+.page-two .rightbox {
+    float: left;
+    padding-top: 10%;
+    width: 30%;
+}
+
+.page-two .rightbox .title {
+    color: #fff;
+    padding-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.page-two .rightbox .listbox {
+    padding: 10px 0px;
+    color: #fff;
+    height: 580px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+
+.page-two .rightbox .listbox::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.swiper-container-vertical > .swiper-scrollbar {
+    right: -50px;
+}
+
+.page-two .rightbox .list {
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+}
+
+.page-two .rightbox .list .line {
+    height: 2px;
+    background: #fff;
+    display: inline-block;
+    width: 30px;
+    position: absolute;
+    left: 0px;
+    top: 30px;
+}
+
+.page-two .rightbox .text {
+    width: 100%;
+    padding-left: 50px;
+    box-sizing: border-box;
+    display: inline-block;
+    float: right;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.page-two .rightbox .text a {
+    color: #fff;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+}
+
+.page-two .rightbox .text a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+
+}
+
+.page-two .rightbox .text span {
+    font-size: 14px;
+    color: #a3bcd8;
+    display: block;
+}
+
+.news-menu {
+    width: 90%;
+    position: absolute;
+    left: 5%;
+}
+
+.view-more {
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -50px;
+    background: url(../images/ico_more.png) no-repeat center top;
+    background-size: auto 20px;
+    text-align: center;
+    padding-top: 30px;
+    color: #fff;
+    display: block;
+    z-index: 9999;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/*
+.go-top {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+    background: url(../images/ico_top.png) no-repeat center top;
+    background-size: auto 80px;
+    cursor: pointer;
+}
+*/
+@media screen and (max-width: 1360px) {
+    .mw-bannerimg {
+
+        background-size: auto 100%;
+
+    }
+
+
+    .mw-newsimg {
+
+        background-size: auto 100%;
+
+    }
+}
