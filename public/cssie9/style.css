@@ -344,10 +344,13 @@ body {
     position: absolute;
     top: 0;
     right: 0;
+    
 }
 
 .recruit .recruit-form .recruit-link img {
     width: 100%;
+   
+   
 }
 
 .recruit .recruit-list {
@@ -515,7 +518,10 @@ body {
     margin-top: 18px;
     text-align: center;
 }
-
+.recruit .load-more img{
+    width: 30px;
+    height: 30px;
+}
 .recruit .load-more a {
     font-size: 16px;
     color: #a6a7a7;
@@ -832,13 +838,13 @@ body {
     width: 1200px;
     top: 52%;
     left: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);  
 }
 
 .contact-box .left-bar {

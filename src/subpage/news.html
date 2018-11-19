@@ -52,7 +52,7 @@
                 <!--banner文字--->
                 <div class="td-center">
                     <div class="newsbanner-text">
-                        <div class="en">{{ topNews.date.replace(/-/g, '.') }}</div>
+                        <div class="en">{{ topNews.date ? topNews.date.replace(/-/g, '.') : topNews.date }}</div>
                         <div class="cn" v-html="filterTitle(topNews.title)"></div>
                         <a :href="'news-content.html?type='+topNews.type+'&id='+topNews.id" class="news-top-more" target="_blank">
                             <span class="more-hard"></span>
@@ -204,10 +204,10 @@
                     return 'http://139.159.238.100/uploads/' + url;
                 },
                 filterTitle: function(str) {
-                    return str.replace(/\*/g, '<br>');
+                    return str ? str.replace(/\*/g, '<br>') : str;
                 },
                 filterTitleList: function(str) {
-                    return str.replace(/\*/g, '');
+                    return str ? str.replace(/\*/g, '') : str;
                 }
             }
         })

@@ -163,7 +163,7 @@ body {
 }
 
 #ft .ft-link .wechat:hover .erweima {
-    display: block!important;
+    display: block !important;
 }
 
 #ft .copyright {
@@ -347,11 +347,12 @@ body {
 
 .recruit .recruit-form .recruit-link img {
     width: 100%;
+    height: auto;
 }
 
 .recruit .recruit-list {
     padding: 40px 0 108px;
-    min-height:600px;
+    min-height: 600px;
 }
 
 .recruit .recruit-list .width1 {
@@ -505,6 +506,11 @@ body {
 .recruit .load-more {
     margin-top: 18px;
     text-align: center;
+}
+
+.recruit .load-more img {
+    width: 30px;
+    height: 30px;
 }
 
 .recruit .load-more a {
@@ -1070,8 +1076,8 @@ body {
 
     #ft .ft-nav {
         display: flex;
-        justify-content:space-between;
-        padding:15px 15px 0;
+        justify-content: space-between;
+        padding: 15px 15px 0;
         font-size: 12px;
         box-sizing: border-box;
     }
@@ -1090,9 +1096,11 @@ body {
         margin: 0 20px 0 0;
         float: none;
     }
-    #ft .ft-link .share-btn:last-child{
+
+    #ft .ft-link .share-btn:last-child {
         margin-right: 0px;
     }
+
     #ft .ft-link a {
         width: 30px;
     }
@@ -1773,7 +1781,7 @@ body {
     }
 
 
-    .mw-popu .popu-info {        
+    .mw-popu .popu-info {
         padding: 0px 20px;
         margin-left: -20px;
     }
@@ -1793,6 +1801,10 @@ body {
     .page-two {
         overflow: hidden;
         height: auto;
+    }
+
+    .mw-contact {
+        position: static;      
     }
 
 
@@ -1954,7 +1966,10 @@ body {
         padding: 15px;
     }
 
-
+    .mw-contact {
+        position: static;
+        min-height: 660px;
+    }
 
 }
 
