@@ -245,8 +245,9 @@ html, body {
             z-index: 98;
             font-size: 0;
             cursor: pointer;
-            svg {
-                width: 1.4rem;
+            svg, img {
+//                width: 1.4rem;
+                width: auto;
                 height: 0.35rem;
             }
         }

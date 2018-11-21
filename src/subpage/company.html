@@ -18,10 +18,21 @@
      <link rel="stylesheet" type="text/css" href="cssie9/style.css" />
      <link rel="stylesheet" type="text/css" href="cssie9/reset.css" />
     <![endif]-->
-
-
-
-
+    <style>
+        .swiper-pagination .swiper-pagination-bullet:first-child {
+            opacity: 0 !important;
+        }
+        .swiper-pagination .swiper-pagination-bullet:last-child {
+            -ms-transform: translateY(-100%) !important;
+            transform: translateY(-100%) !important;
+            position: relative !important;
+            top: -16px !important;
+            opacity: 0 !important;
+        }
+        .swiper-pagination .swiper-pagination-bullet:last-child.swiper-pagination-bullet-active {
+            opacity: 1 !important;
+        }
+    </style>
     <script type="text/javascript">
         var _hmt = _hmt || [];
         (function() {
@@ -36,194 +47,191 @@
 </head>
 
 <body>
-   <div id="company" style="height: 100%;">
-    <div class="menuflex">
-        <div class="mw-container">
-            <div id="hd">
-                <div class="clearfix">
-                    <a href="index.html" class="hd-logo fl">
-                        <img src="images/logo.png">
-                    </a>
-                    <a href="javascript:;" class="nav-btn fr"></a>
-                    <div class="hd-nav fr">
-                        <a href="javascript:;" class="nav-close"></a>
-                        <ul class="clearfix">
-                            <li class="on"><a href="company.html">企业介绍</a></li>
-                            <li><a href="news.html">资讯动态</a></li>
-                            <li><a href="jobs.html">招聘信息</a></li>
-                            <li><a href="contact.html">联系我们</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="swiper-container swiper-container-1" style="overflow: hidden;">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide swiper-slide-full">
-                <div class="mw-bannerbgtwo">
-                    <div class="mw-container">
-                        <!--banner文字--->
-                        <div class="banner-text">
-                            <div class="cn">引领智慧出行 成为卓越企业</div>
-                            <i class="line"></i>
-                            <div class="en">广汽蔚来新能源汽车科技有限公司（GAC NIO new energy automotive technology co,ltd）成立于2018年4月10日，由广州汽车集团有限公司（股比22.5%）、广汽新能源汽车有限公司（股比22.5%）、上海蔚来汽车有限公司（股比22.5%）、湖北长江蔚来新能源产业发展基金合伙企业-有限合伙（股比22.5%）以及核心团队（股比10%）共同设立的中外合资公司。
-                            </div>
-                        </div>
-                        <div class="view-more">
-                            企业理念
-                        </div>
-                    </div>
-                    <div class="mw-bannerimg" style="background-image:url(images/com-banner.jpg); "></div>
-                </div>
-            </div>
-            <div class="swiper-slide swiper-slide-full" style="overflow: hidden">
-                <div class="mw-swiper">
-                    <div class="mw-container">
-                        <div class="swiper-text">
-                            <div class="swiper-text01">
-                                良知
-                            </div>
-                            <i class="line"></i>
-                            <div class="swiper-text02" style="width: 100%;">
-                                天赋的道德观念
-                            </div>
-                        </div>
-                        <div class="view-more">
-                            view more
-                        </div>
-                    </div>
-                    <div class="mw-bannerimg" style="background-image:url(images/swiper_01.jpg) "></div>
-                </div>
-            </div>
-            <div class="swiper-slide swiper-slide-full" style="overflow: hidden">
-                <div class="mw-swiper">
-                    <div class="mw-container">
-                        <div class="swiper-text">
-                            <div class="swiper-text01">
-                                开放
-                            </div>
-                            <i class="line"></i>
-                            <div class="swiper-text02">
-                                不固守已有的思维模式，摒弃经验依赖和路径依赖。
-                            </div>
-                        </div>
-                        <div class="view-more">
-                            view more
-                        </div>
-                    </div>
-                    <div class="mw-bannerimg" style="background-image:url(images/swiper_02.jpg) "></div>
-                </div>
-            </div>
-            <div class="swiper-slide swiper-slide-full" style="overflow: hidden">
-                <div class="mw-swiper">
-                    <div class="mw-container">
-                        <div class="swiper-text">
-                            <div class="swiper-text01">
-                                创新
-                            </div>
-                            <i class="line"></i>
-                            <div class="swiper-text02">
-                                力求打造合规性下的最高效的运营系统，勇于在规则外寻求突破性的技术解决方案，提供具有创造性的产品来满足不断增长的用户需求。
-                            </div>
-                        </div>
-                        <div class="view-more">
-                            view more
-                        </div>
-                    </div>
-                    <div class="mw-bannerimg" style="background-image:url(images/swiper_03.jpg) "></div>
-                </div>
-            </div>
-            <div class="swiper-slide swiper-slide-full" style="overflow: hidden">
-                <div class="mw-swiper">
-                    <div class="mw-container">
-                        <div class="swiper-text">
-                            <div class="swiper-text01">
-                                共享
-                            </div>
-                            <i class="line"></i>
-                            <div class="swiper-text02">
-                                公司的每一步成长必然伴随员工的获得，注重建立良好的生态，合作共赢。
-                            </div>
-                        </div>
-                        <div class="view-more">
-                            view more
-                        </div>
-                    </div>
-                    <div class="mw-bannerimg" style="background-image:url(images/swiper_04.jpg) "></div>
-                </div>
-            </div>
-            <div class="swiper-slide swiper-slide-full" style="overflow: hidden">
-                <div class="mw-swiper">
-                    <div class="mw-container">
-                        <div class="swiper-text">
-                            <div class="swiper-text01">
-                                进取
-                            </div>
-                            <i class="line"></i>
-                            <div class="swiper-text02">
-                                我们要做纯电动车行业的引领者，锐意进取，力争成为各自专业的专家。
-                            </div>
-                        </div>
-                        <div class="view-more">
-                            view more
-                        </div>
-                        <div class="go-top" id="gotoTop"> </div>
-
-                    </div>
-                    <div class="mw-bannerimg" style="background-image:url(images/swiper_05.jpg) "></div>
-                </div>
-            </div>
-            <div class="swiper-slide swiper-slide-footer">
-                <div id="ft">
-                    <div class="wp">
-                        <div class=" clearfix">
-                            <a href="index.html" class="ft-logo fl">
-                                <img src="images/logo.png">
-                            </a>
-                            <ul class="ft-item ft-nav">
-                                <li>
-                                    <a href="company.html">企业介绍</a>
-                                </li>
-                                <li>
-                                    <a href="news.html">资讯动态</a>
-                                </li>
-                                <li>
-                                    <a href="jobs.html">招聘信息</a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">联系我们 </a>
-                                </li>
+    <div id="company" style="height: 100%;">
+        <div class="menuflex">
+            <div class="mw-container">
+                <div id="hd">
+                    <div class="clearfix">
+                        <a href="index.html" class="hd-logo fl">
+                            <img src="images/logo.png">
+                        </a>
+                        <a href="javascript:;" class="nav-btn fr"></a>
+                        <div class="hd-nav fr">
+                            <a href="javascript:;" class="nav-close"></a>
+                            <ul class="clearfix">
+                                <li class="on"><a href="company.html">企业介绍</a></li>
+                                <li><a href="news.html">资讯动态</a></li>
+                                <li><a href="jobs.html">招聘信息</a></li>
+                                <li><a href="contact.html">联系我们</a></li>
                             </ul>
-                            <div class="ft-item ft-contact">
-                                <p>Email：service@gac-nio.com</p>
-                            </div>
-                            <div class="ft-item ft-link clearfix">
-                                <div class="wechat share-btn">
-                                    <div id="showCode"><img src="images/icon1.png"></div>
-                                    <div class="erweima" id="EwmCode">
-                                        <img src="images/erweima.jpg">
-                                    </div>
-                                </div>
-
-                                <a href="https://weibo.com/u/6563374966" target="_blank" class="share-btn">
-                                    <img src="images/icon3.png">
-                                </a>
-                            </div>
                         </div>
-                        <div class="copyright">Copyright © 2018 , Guangqiweilai All Rights Reserved 粤ICP备18123237号</div>
                     </div>
                 </div>
-                <div class="filter-bg erweima-box">
-                    <div class="erweima-popup">
-                        <img src="images/erweima2.png">
-                    </div>
-                </div>
-
             </div>
         </div>
+        <div class="swiper-container swiper-container-1" style="overflow: hidden;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide-full">
+                    <div class="mw-bannerbgtwo">
+                        <div class="mw-container">
+                            <!--banner文字--->
+                            <div class="banner-text">
+                                <div class="cn">引领智慧出行 成为卓越企业</div>
+                                <i class="line"></i>
+                                <div class="en">广汽蔚来新能源汽车科技有限公司（GAC NIO new energy automotive technology co,ltd）成立于2018年4月10日，由广州汽车集团有限公司（股比22.5%）、广汽新能源汽车有限公司（股比22.5%）、上海蔚来汽车有限公司（股比22.5%）、湖北长江蔚来新能源产业发展基金合伙企业-有限合伙（股比22.5%）以及核心团队（股比10%）共同设立的中外合资公司。
+                                </div>
+                            </div>
+                            <div class="view-more" id="gotoNub1">
+                                企业理念
+                            </div>
+                        </div>
+                        <div class="mw-bannerimg" style="background-image:url(images/com-banner.jpg); "></div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-full" style="overflow: hidden">
+                    <div class="mw-swiper">
+                        <div class="mw-container">
+                            <div class="swiper-text">
+                                <div class="swiper-text01">
+                                    良知
+                                </div>
+                                <i class="line"></i>
+                                <div class="swiper-text02" style="width: 100%;">
+                                    传递正能量，知行合一
+                                </div>
+                            </div>
+                            <div class="view-more" id="gotoNub2">
+
+                            </div>
+                        </div>
+                        <div class="mw-bannerimg" style="background-image:url(images/swiper_01.jpg) "></div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-full" style="overflow: hidden">
+                    <div class="mw-swiper">
+                        <div class="mw-container">
+                            <div class="swiper-text">
+                                <div class="swiper-text01">
+                                    开放
+                                </div>
+                                <i class="line"></i>
+                                <div class="swiper-text02">
+                                    不固守已有的思维模式，摒弃经验依赖和路径依赖。
+                                </div>
+                            </div>
+                            <div class="view-more" id="gotoNub3">
+
+                            </div>
+                        </div>
+                        <div class="mw-bannerimg" style="background-image:url(images/swiper_02.jpg) "></div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-full" style="overflow: hidden">
+                    <div class="mw-swiper">
+                        <div class="mw-container">
+                            <div class="swiper-text">
+                                <div class="swiper-text01">
+                                    创新
+                                </div>
+                                <i class="line"></i>
+                                <div class="swiper-text02">
+                                    力求打造合规性下的最高效的运营系统，勇于在规则外寻求突破性的技术解决方案，提供具有创造性的产品来满足不断增长的用户需求。
+                                </div>
+                            </div>
+                            <div class="view-more" id="gotoNub4">
+
+                            </div>
+                        </div>
+                        <div class="mw-bannerimg" style="background-image:url(images/swiper_03.jpg) "></div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-full" style="overflow: hidden">
+                    <div class="mw-swiper">
+                        <div class="mw-container">
+                            <div class="swiper-text">
+                                <div class="swiper-text01">
+                                    共享
+                                </div>
+                                <i class="line"></i>
+                                <div class="swiper-text02">
+                                    公司的每一步成长必然伴随员工的获得，注重建立良好的生态，合作共赢。
+                                </div>
+                            </div>
+                            <div class="view-more" id="gotoNub5">
+
+                            </div>
+                        </div>
+                        <div class="mw-bannerimg" style="background-image:url(images/swiper_04.jpg) "></div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-full" style="overflow: hidden">
+                    <div class="mw-swiper">
+                        <div class="mw-container">
+                            <div class="swiper-text">
+                                <div class="swiper-text01">
+                                    进取
+                                </div>
+                                <i class="line"></i>
+                                <div class="swiper-text02">
+                                    我们要做纯电动车行业的引领者，锐意进取，力争成为各自专业的专家。
+                                </div>
+                            </div>
+                            <div class="go-top" id="gotoTop"> </div>
+                        </div>
+                        <div class="mw-bannerimg" style="background-image:url(images/swiper_05.jpg) "></div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-footer">
+                    <div id="ft">
+                        <div class="wp">
+                            <div class=" clearfix">
+                                <a href="index.html" class="ft-logo fl">
+                                    <img src="images/logo.png">
+                                </a>
+                                <ul class="ft-item ft-nav">
+                                    <li>
+                                        <a href="company.html">企业介绍</a>
+                                    </li>
+                                    <li>
+                                        <a href="news.html">资讯动态</a>
+                                    </li>
+                                    <li>
+                                        <a href="jobs.html">招聘信息</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">联系我们 </a>
+                                    </li>
+                                </ul>
+                                <div class="ft-item ft-contact">
+                                    <p>Email：service@gac-nio.com</p>
+                                    <p>Tel：020-32336900</p>
+                                </div>
+                                <div class="ft-item ft-link clearfix">
+                                    <div class="wechat share-btn">
+                                        <div id="showCode"><img src="images/icon1.png"></div>
+                                        <div class="erweima" id="EwmCode">
+                                            <img src="images/erweima.jpg">
+                                        </div>
+                                    </div>
+
+                                    <a href="https://weibo.com/u/6563374966" target="_blank" class="share-btn">
+                                        <img src="images/icon3.png">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="copyright">Copyright ©  2018  广汽蔚来新能源汽车科技有限公司 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18123237号</a></div>
+                        </div>
+                    </div>
+                    <div class="filter-bg erweima-box">
+                        <div class="erweima-popup">
+                            <img src="images/erweima2.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination" id="hidePage"></div>
+        </div>
     </div>
-</div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/swiper.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
@@ -235,14 +243,48 @@
             slidesPerView: 1,
             spaceBetween: 0,
             mousewheel: true,
-            slidesPerView: 'auto'
+            slidesPerView: 'auto',
+            direction: 'vertical',
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            on: {
+                init: function() {
+                    $('#hidePage').hide();
+                },
+                slideChange: function() {                  
+                    if (swiper1.activeIndex != 0 && swiper1.activeIndex != 6) {
+                        $('#hidePage').show();
+                    } else {
+                        $('#hidePage').hide();
+                    }
+                }
+            }
         });
         $("#gotoTop").click(function() {
             swiper1.slideTo(0, 1000, false);
         });
+        $("#gotoNub1").click(function() {
+            swiper1.slideTo(1, 1000, false);
+        });
+        $("#gotoNub2").click(function() {
+            swiper1.slideTo(2, 1000, false);
+        });
+        $("#gotoNub3").click(function() {
+            swiper1.slideTo(3, 1000, false);
+        });
+        $("#gotoNub4").click(function() {
+            swiper1.slideTo(4, 1000, false);
+        });
+        $("#gotoNub5").click(function() {
+            swiper1.slideTo(5, 1000, false);
+        });
         $("#showCode").click(function(event) {
             $("#EwmCode").show();
         });
+
+
 
 
         $('#company').on('click', function(event) {

@@ -1,6 +1,6 @@
 <template>
     <div class="mw-main">
-        <a href="/" class="logo"><svg-logo @click="window.location.href='/'"></svg-logo></a>
+        <a href="/" class="logo"><img :src="logoImage"/></a>
         <div class="nav-button" @click="showNav = !showNav" :class="{ 'open': showNav }">
             <i class="top"></i>
             <i class="middle"></i>
@@ -53,6 +53,7 @@
     export default {
         data () {
             return {
+                logoImage: '',
                 status: '',
                 loadedEnter: false,
                 showNav: false,
@@ -121,6 +122,7 @@
             }
         },
         created () {
+            this.logoImage = window.dataJSON.logo
             this.status = window.dataJSON.status
             this.nav = window.dataJSON.nav
             this.popup1 = window.dataJSON.popup1

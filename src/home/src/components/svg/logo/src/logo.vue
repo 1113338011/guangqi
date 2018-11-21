@@ -1,4 +1,5 @@
 <template>
+<!--
     <svg version="1.1"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 181.25 44.87" xml:space="preserve">
     <g>
         <path style="fill:#ffffff;" d="M27.068,5.967H43.26v3.036h-33v32.956H2.956V5.967H19.5V4.471h7.568V5.967z"/>
@@ -17,6 +18,8 @@
             h7.304L177.372,39.055z"/>
     </g>
     </svg>
+-->
+    <img src="@/assets/images/test-logo.png"/>
 </template>
 
 <script>

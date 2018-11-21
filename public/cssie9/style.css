@@ -911,7 +911,7 @@ body {
 
 .contact-box .right-con .info-item {
     float: left;
-    width: 80%;
+    width: 50%;
     box-sizing: border-box;
     padding-left: 70px;
     position: relative;
@@ -1115,6 +1115,9 @@ body {
     width: 100%;
     height: 100%;
 }
+.mw-container .banner-text {
+    -ms-transform: translateY(-180px) !important;
+}
 
 @media screen and (max-width: 1680px) {
     .contact-box .left-bar .ct-logo {
@@ -1201,12 +1204,16 @@ body {
         line-height: 44px;
         font-size: 18px;
     }
+       #ft .ft-logo img {
+        width: auto;
+        height: 30px;
+    }
 }
 
 
 @media screen and (max-width: 1440px) {
     .contact-box {
-        width: 60%;
+        width: 75%;
     }
 
     .contact-box .left-bar .ct-logo {
@@ -1311,6 +1318,10 @@ body {
         top: 18%;
         padding: 40px;
     }
+    #ft .ft-logo img {
+        width: auto;
+        height: 28px;
+    }
 }
 
 
@@ -1413,5 +1424,9 @@ body {
     .mw-popu .popu-info {
         padding: 0px 20px;
         margin-left: -20px;
+    }
+      #ft .ft-logo img {
+        width: auto;
+        height: 26px;
     }
 }

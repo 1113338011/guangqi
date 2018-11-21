@@ -172,6 +172,10 @@ body {
     margin-top: 20px;
 }
 
+#ft .copyright a {
+    color: #fff;
+}
+
 .page-banner {
     position: relative;
     z-index: 1;
@@ -448,6 +452,10 @@ body {
 
 }
 
+.mw-container .banner-text {
+    transform: translateY(-180px);
+}
+
 .specific-item .linkurl {
     display: block;
     float: left;
@@ -550,6 +558,7 @@ body {
 
 
 
+
 @media screen and (max-width: 1680px) {
     .wp {
         width: 86%;
@@ -598,6 +607,12 @@ body {
     .recruit .recruit-list .category {
         padding: 20px 18px;
     }
+   
+    #ft .ft-logo img {
+        width: auto;
+        height: 30px;
+    }
+  
 }
 
 @media screen and (max-width: 1440px) {
@@ -613,10 +628,7 @@ body {
         padding-top: 40px;
     }
 
-    #hd .hd-logo img {
-        height: 34px;
-        width: auto;
-    }
+
 
     .hd-login {
         line-height: 34px;
@@ -643,7 +655,7 @@ body {
 
     #ft .ft-logo img {
         width: auto;
-        height: 34px;
+        height: 28px;
     }
 
     #ft .ft-item::before {
@@ -783,7 +795,7 @@ body {
 
     #ft .ft-logo img {
         width: auto;
-        height: 28px;
+        height: 24px;
     }
 
     .page-banner .text h1 {
@@ -1125,6 +1137,10 @@ body {
         font-size: 16px;
     }
 
+    .mw-container .banner-text {
+        transform: translateY(-170px);
+    }
+
     .recruit {
         margin-top: -220px;
     }
@@ -1215,8 +1231,8 @@ body {
     width: 1200px;
     top: 52%;
     left: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     border-radius: 4px;
@@ -1295,7 +1311,7 @@ body {
 
 .contact-box .right-con .info-item {
     float: left;
-    width: 80%;
+    width: 50%;
     box-sizing: border-box;
     padding-left: 70px;
     position: relative;
@@ -1394,6 +1410,10 @@ body {
     bottom: 2%;
     color: #fff;
     text-align: right;
+}
+
+.c-copyright a {
+    color: #fff;
 }
 
 .mw-popu {
@@ -1586,7 +1606,7 @@ body {
 
 @media screen and (max-width: 1440px) {
     .contact-box {
-        width: 60%;
+        width: 75%;
     }
 
     .contact-box .left-bar .ct-logo {
@@ -1693,6 +1713,11 @@ body {
 
 
 @media screen and (max-width: 1366px) {
+
+    .contact-box {
+        width: 85%;
+    }
+
     .contact-box .left-bar .ct-logo {
         padding-top: 24px;
         display: block;
@@ -1804,7 +1829,7 @@ body {
     }
 
     .mw-contact {
-        position: static;      
+        position: static;
     }
 
 

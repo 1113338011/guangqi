@@ -10,11 +10,14 @@
     position: relative;
     overflow: hidden;
 }
+
 .mw-bannernewsbg .mw-container {
     position: absolute;
     top: 0;
-    left: 5%;
+    left: 50%;
     bottom: 0;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
 }
 
 .mw-bannerbgtwo {
@@ -104,11 +107,12 @@
 
 .mw-container .banner-text {
     position: absolute;
-    top: 20%;
-    left: 5%;
+    top: 50%;
+    left: 0;
     color: #fff;
     z-index: 9;
     width: 80%;
+    -ms-transform: translateY(-180px);
 }
 
 .td-center {
@@ -138,6 +142,7 @@
 .mw-container .newsbanner-text .en {
     font-size: 24px;
     line-height: 1.8;
+
 }
 
 .news-top-more {
@@ -161,10 +166,13 @@
 
 .news-top-more .more-text {
     color: rgba(255, 255, 255, 1);
-    width: 100px;
+    /*width: 100px;*/
+    display: block;
+    width: 100%;
     font-size: 18px;
     height: 45px;
-    float: right;
+/*    float: right;*/
+    text-align: center;
 }
 
 .news-top-more:hover {
@@ -199,8 +207,9 @@
 }
 
 .mw-container .banner-text .en {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.6;
+    width: 55%;
 }
 
 
@@ -500,6 +509,7 @@
     margin: 0px 10px;
     display: inline-block;
 }
+
 .newsmainbox .data span:first-child {
     margin-left: 0;
 }
@@ -659,6 +669,7 @@
     z-index: 9999;
     font-size: 14px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .go-top {
@@ -672,19 +683,66 @@
     cursor: pointer;
 }
 
+.swiper-pagination {
+    left: 5%;
+}
+
+.swiper-pagination-bullet {
+    width: 13px;
+    height: 13px;
+    background: rgb(255, 255, 255, .3)
+}
+
+.swiper-pagination-bullet-active {
+    background: rgb(255, 255, 255, 1)
+}
+
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 16px 0px;
+}
+
 @media screen and (max-width: 1440px) {
     .go-top {
         width: 70px;
         height: 70px;
         background-size: auto 70px;
-
     }
+
+
+    .swiper-pagination {
+        left: 5%;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background: rgb(255, 255, 255, .3)
+    }
+
+    .swiper-pagination-bullet-active {
+        background: rgb(255, 255, 255, 1)
+    }
+
 
 }
 
 @media screen and (max-width: 1200px) {
     .news-list-main .listbox .textbox .name {
         font-size: 20px;
+    }
+
+    .swiper-pagination {
+        left: 5%;
+    }
+
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        background: rgb(255, 255, 255, .3)
+    }
+
+    .swiper-pagination-bullet-active {
+        background: rgb(255, 255, 255, 1)
     }
 }
 
@@ -701,6 +759,9 @@
         background-size: auto 60px;
 
     }
+     .swiper-pagination {
+        display: none;
+    }
 
     .hd-bt-box .textbox {
         font-size: 13px;
@@ -710,12 +771,7 @@
         width: 95%;
     }
 
-    .mw-container .banner-text {
-        position: absolute;
-        top: 20%;
-        left: 0;
-
-    }
+    .mw-container .banner-text {}
 
     .hd-bt-box .amni .min {
         height: 60px;
@@ -723,7 +779,7 @@
     }
 
     .mw-container .banner-text .cn {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .mw-container .banner-text .line {
@@ -732,7 +788,7 @@
     }
 
     .mw-container .banner-text .en {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .mw-container .newsbanner-text .cn {
@@ -921,7 +977,7 @@
 
 
     .news-list-main .listbox .textbox .name {
-        font-size: 20px;
+        font-size: 18px;
     }
 
 
@@ -994,6 +1050,9 @@
     .hd-bt-box {
         height: 30%;
         width: 100%;
+    }
+    .swiper-pagination{
+        display: none!important;
     }
 
     .view-more {
@@ -1141,17 +1200,10 @@
         color: #fff;
         width: 80%;
     }
-    
+
     .mw-bannernewsbg {
         padding-top: 45px;
     }
-
-
-
-    .news-list-main .listbox .textbox .name {
-        font-size: 16px;
-    }
-
 
 }
 
@@ -1165,7 +1217,8 @@
     }
 
     .mw-container .banner-text .en {
-        font-size: 14px;
+        font-size: 10px;
+        width: 75%;
     }
 
     .mw-container .newsbanner-text {
@@ -1180,7 +1233,7 @@
         background-size: auto 30px;
 
     }
-    
+
     .mw-bannernewsbg {
         padding-top: 45px;
     }
@@ -1220,10 +1273,8 @@
 
     .news-top-more .more-text {
         color: rgba(255, 255, 255, 1);
-        width: 60px;
         font-size: 14px;
         height: 25px;
-        float: right;
     }
 
     .news-top-more:hover {
@@ -1301,7 +1352,9 @@
         height: 45%;
     }
 
-
+    .mw-container .banner-text .cn {
+        font-size: 22px;
+    }
 
 }
 
@@ -1309,45 +1362,5 @@
     .mw-bannerbgtwo .hd-bt-box {
         height: 45%;
         width: 100%;
-    }
-}
-
-@media screen and (max-height: 420px) {
-    .mw-container .banner-text {
-        width: 100%;
-    }
-
-    .mw-container .banner-text .cn {
-        font-size: 22px;
-    }
-
-    .mw-container .banner-text .line {
-        margin: 10px 0px;
-
-    }
-
-    .mw-container .banner-text .en {
-        font-size: 16px;
-    }
-
-    .mw-container .newsbanner-text {
-        width: 100%;
-    }
-
-    .mw-container .newsbanner-text .cn {
-        font-size: 22px;
-    }
-
-    .mw-container .newsbanner-text .en {
-        font-size: 16px;
-    }
-
-    .page-two .leftbox .mainbox .content {
-        font-size: 14px;
-
-    }
-
-    .swiper-slide-footer {
-        height: 320px;
     }
 }
